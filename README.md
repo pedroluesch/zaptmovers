@@ -83,3 +83,21 @@ Common results:
   recommends this so an outage on their side never costs you a lead.
 - Replace the three placeholder reviews with your real Google and Yelp text.
 - Point `sitemap.xml` and `robots.txt` at the final domain.
+
+## Troubleshooting the form
+
+Check these two URLs in your browser, in this order.
+
+1. `https://YOUR-SITE.netlify.app/.netlify/functions/lead`
+   - `{"error":"Method not allowed"}` → the function deployed. Go to step 2.
+   - Your 404 page → the function did not deploy. Confirm `netlify/functions/lead.mjs`
+     is in the repo and `netlify.toml` has `functions = "netlify/functions"`.
+
+2. `https://YOUR-SITE.netlify.app/api/lead`
+   - `{"error":"Method not allowed"}` → routing is fine. The problem is the
+     environment variable: add `SMARTMOVING_PROVIDER_KEY`, then **redeploy**.
+   - Your 404 page → routing problem. The `_redirects` file and the `[[redirects]]`
+     block in `netlify.toml` fix this. Redeploy after adding them.
+
+The browser console on the quote page also prints the exact failure, prefixed
+with `Zapt form:`.

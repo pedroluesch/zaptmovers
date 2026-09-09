@@ -616,6 +616,31 @@ footer{background:var(--ink);color:rgba(239,230,214,.78);padding:56px 0 34px;fon
         <label for="fdate" data-en="Preferred date" data-pt="Data desejada">Preferred date</label>
         <input type="date" id="fdate">
       </div>
+      <div class="row">
+        <div class="field">
+          <label for="fsize" data-en="Move size" data-pt="Tamanho da mudança">Move size</label>
+          <select id="fsize">
+            <option value="studio" data-crm="1 Bedroom" data-en="Studio / 1 bedroom" data-pt="Studio / 1 quarto">Studio / 1 bedroom</option>
+            <option value="two" selected data-crm="2 Bedrooms" data-en="2 bedrooms" data-pt="2 quartos">2 bedrooms</option>
+            <option value="three" data-crm="3 Bedrooms" data-en="3 bedrooms" data-pt="3 quartos">3 bedrooms</option>
+            <option value="four" data-crm="4+ Bedrooms" data-en="4+ bedrooms" data-pt="4+ quartos">4+ bedrooms</option>
+            <option value="office" data-crm="Office" data-en="Office / commercial" data-pt="Escritório / comercial">Office / commercial</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="freferral" data-en="How did you hear about us?" data-pt="Como nos conheceu?">How did you hear about us?</label>
+          <select id="freferral">
+            <option value="" data-en="Select one" data-pt="Selecione">Select one</option>
+            <option value="Google">Google</option>
+            <option value="Yelp">Yelp</option>
+            <option value="Facebook" data-en="Facebook or Instagram" data-pt="Facebook ou Instagram">Facebook or Instagram</option>
+            <option value="Referral" data-en="Friend or family" data-pt="Indicação de amigo ou familiar">Friend or family</option>
+            <option value="Repeat Customer" data-en="I've moved with you before" data-pt="Já me mudei com vocês">I've moved with you before</option>
+            <option value="Realtor" data-en="Realtor or property manager" data-pt="Corretor ou administradora">Realtor or property manager</option>
+            <option value="Other" data-en="Something else" data-pt="Outro">Something else</option>
+          </select>
+        </div>
+      </div>
       <label class="consent" for="foptin">
         <input type="checkbox" id="foptin" checked>
         <span data-en="Text me updates about my move. Message rates may apply." data-pt="Quero receber mensagens sobre a minha mudança. Podem incidir tarifas de SMS.">Text me updates about my move. Message rates may apply.</span>
@@ -816,19 +841,26 @@ function optionLabel(sel){
 }
 
 const BEDROOMS = { studio:"1", two:"2", three:"3", four:"4+", office:"Office" };
+const fsizeEl = document.getElementById('fsize');
+const freferralEl = document.getElementById('freferral');
+
+fsizeEl.value = sizeEl.value;
+sizeEl.addEventListener('change', ()=>{ fsizeEl.value = sizeEl.value; });
+fsizeEl.addEventListener('change', ()=>{ sizeEl.value = fsizeEl.value; calc(); });
 
 function buildLead(){
   const v = id => document.getElementById(id).value.trim();
   const origin = parsePlace(v('ffrom'));
   const dest = parsePlace(v('fto'));
-  const size = sizeEl.value;
+  const size = fsizeEl.value;
+  const sizeOption = fsizeEl.options[fsizeEl.selectedIndex];
   const packing = addEls.some(el => el.checked && el.dataset.add === 'packing');
 
   const extras = addEls.filter(el=>el.checked)
     .map(el => el.nextElementSibling.getAttribute('data-en') || el.nextElementSibling.textContent.trim());
 
   const notes = [
-    'Move size: ' + optionLabel(sizeEl),
+    'Move size: ' + (sizeOption.getAttribute('data-en') || sizeOption.textContent.trim()),
     'Distance: ' + optionLabel(distEl),
     extras.length ? 'Requested extras: ' + extras.join(', ') : 'Requested extras: none',
     'Site estimate shown: ' + amountEl.textContent,
@@ -843,9 +875,9 @@ function buildLead(){
     userOptIn: document.getElementById('foptin').checked,
     email: v('femail'),
     bedrooms: BEDROOMS[size],
-    moveSize: optionLabel(sizeEl),
+    moveSize: sizeOption.getAttribute('data-crm'),
     serviceType: packing ? 'MovingAndPacking' : 'Moving',
-    referralSource: CONFIG.referralSource,
+    referralSource: freferralEl.value || CONFIG.referralSource,
     notes: notes
   });
 
@@ -906,6 +938,15 @@ sendBtn.addEventListener('click', async ()=>{
   }
   if(document.getElementById('fcompany').value){ return; }
 
+  if(location.protocol === 'file:'){
+    formStatus.className = 'status bad';
+    formStatus.innerHTML = pt
+      ? '<h3>Formulário desativado localmente.</h3><p>Você abriu o arquivo direto do computador. O envio só funciona com o site publicado, porque depende da função <code>/api/lead</code> do servidor.</p>'
+      : '<h3>Form disabled locally.</h3><p>You opened this file straight from your computer. Submitting only works on the deployed site, because it needs the server-side <code>/api/lead</code> function.</p>';
+    console.warn('Zapt form: running from file:// — /api/lead is not reachable. Deploy the site to test submissions.');
+    return;
+  }
+
   sendBtn.disabled = true;
   sendLabel.textContent = pt ? 'Enviando…' : 'Sending…';
 
@@ -926,6 +967,8 @@ sendBtn.addEventListener('click', async ()=>{
     }
 
     const body = await res.text();
+    console.error('Zapt form: lead endpoint returned HTTP ' + res.status, body);
+
     if(res.status === 400 && /already been submitted/i.test(body)){
       formStatus.className = 'status ok';
       formStatus.innerHTML = pt
@@ -934,9 +977,17 @@ sendBtn.addEventListener('click', async ()=>{
       sendBtn.style.display = 'none';
       return;
     }
-    throw new Error('HTTP ' + res.status);
+
+    if(res.status === 404){
+      console.error('Zapt form: /api/lead was not found. On Netlify this means the function did not deploy — check that netlify/functions/lead.mjs is in the repo and that netlify.toml sets functions = "netlify/functions".');
+    }
+    if(res.status === 500 && /PROVIDER_KEY/i.test(body)){
+      console.error('Zapt form: SMARTMOVING_PROVIDER_KEY is missing. Add it under Site configuration > Environment variables, then trigger a NEW deploy — functions only read variables at build time.');
+    }
+    throw new Error('HTTP ' + res.status + ' — ' + body.slice(0, 300));
 
   }catch(err){
+    console.error('Zapt form: submission failed.', err);
     formStatus.className = 'status bad';
     formStatus.innerHTML = pt
       ? '<h3>Não conseguimos enviar.</h3><p>Algo falhou no envio. Ligue para (415) 843-2532 ou use o botão do WhatsApp aqui ao lado — seus dados já estão preenchidos na mensagem.</p>'
