@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zapt Movers | Licensed Movers — Bay Area, Los Angeles &amp; Dallas–Fort Worth</title>
+<meta name="description" content="Zapt Movers: 15,000+ completed moves, 4.8 stars from 1,000+ verified reviews. Licensed, bonded and insured with $1M cargo coverage. Local and long-distance moving in the Bay Area, Los Angeles and Dallas–Fort Worth. Free quote in 60 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111C2E;
+  --ink-2:#3A4A66;
+  --kraft:#EFE6D6;
+  --kraft-deep:#E2D4BC;
+  --corrugate:#C29A63;
+  --zap:#FFD100;
+  --paper:#FFFFFF;
+  --stamp:#B23A2E;
+  --radius:14px;
+  --pad:clamp(20px,5vw,64px);
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--kraft);color:var(--ink);
+  font-family:"Instrument Sans",system-ui,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,.display{
+  font-family:"Big Shoulders Display","Arial Narrow",sans-serif;
+  font-weight:900;line-height:.92;letter-spacing:-.01em;text-transform:uppercase;margin:0;
+}
+p{margin:0 0 1em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.mono{font-family:"DM Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+
+.tape{position:relative;display:inline-block}
+.tape::after{content:"";position:absolute;left:-.12em;right:-.12em;bottom:.08em;height:.30em;background:var(--zap);z-index:-1;transform:rotate(-.6deg)}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(239,230,214,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--kraft-deep)}
+.bar{display:flex;align-items:center;gap:22px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo img{height:38px;width:auto;border-radius:6px}
+.logo .mark{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:29px;letter-spacing:-.02em;line-height:1}
+.logo .mark em{font-style:normal;background:var(--zap);padding:0 5px;display:inline-block;transform:skewX(-8deg)}
+nav{margin-left:auto;display:flex;align-items:center;gap:24px}
+nav a.nl{text-decoration:none;font-size:14px;font-weight:600;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a.nl:hover{border-color:var(--ink)}
+.lang{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.lang button{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;background:none;border:0;padding:5px 10px;cursor:pointer;color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--kraft)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--ink);color:var(--kraft);text-decoration:none;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;
+  font-family:"Instrument Sans",sans-serif;font-weight:600;font-size:15px;transition:transform .18s ease,box-shadow .18s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px rgba(17,28,46,.25)}
+.btn-zap{background:var(--zap);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;margin-left:auto}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+
+/* hero */
+.hero{position:relative;padding:clamp(44px,6vw,80px) 0 clamp(44px,6vw,76px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;opacity:.5;
+  background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(194,154,99,.16) 22px 23px);
+  mask-image:linear-gradient(180deg,#000,transparent 78%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 78%);
+}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,60px);align-items:start}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--ink-2);margin-bottom:20px}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--ink);flex-shrink:0}
+h1{font-size:clamp(50px,8vw,110px)}
+h1 .line2{display:block}
+.lede{font-size:clamp(17px,1.9vw,20px);max-width:32em;margin-top:24px;color:var(--ink-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:22px;border-top:1px dashed var(--corrugate)}
+.chip{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--paper);border:1px solid var(--kraft-deep);padding:7px 12px;border-radius:999px}
+
+/* estimator */
+.label-card{background:var(--paper);border-radius:var(--radius);box-shadow:0 22px 50px -26px rgba(17,28,46,.5);position:relative;overflow:hidden}
+.label-card::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--zap) 0 18px,var(--ink) 18px 26px)}
+.label-head{padding:26px 26px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.label-head h3{font-size:30px}
+.label-head .mono{color:var(--ink-2)}
+.perf{border-top:2px dashed var(--kraft-deep);margin:20px 0 0}
+.label-body{padding:22px 26px 26px}
+.field{margin-bottom:16px}
+.field > label{display:block;margin-bottom:7px;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+select,input[type=text],input[type=tel],input[type=date]{
+  width:100%;padding:12px 13px;border:1.5px solid var(--kraft-deep);border-radius:10px;
+  font-family:"Instrument Sans",sans-serif;font-size:15px;background:#FCFAF6;color:var(--ink);
+}
+select:focus,input:focus{outline:3px solid rgba(255,209,0,.65);outline-offset:1px;border-color:var(--ink)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{display:block;padding:9px 13px;border:1.5px solid var(--kraft-deep);border-radius:999px;font-size:13.5px;cursor:pointer;user-select:none;transition:.15s}
+.opt input:checked + span{background:var(--ink);color:var(--kraft);border-color:var(--ink)}
+.opt input:focus-visible + span{outline:3px solid rgba(255,209,0,.75);outline-offset:2px}
+.result{margin-top:18px;background:var(--kraft);border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.result .amount{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:42px;line-height:.9}
+.result small{display:block;color:var(--ink-2);font-size:12.5px;line-height:1.4;margin-top:6px}
+.stamp{border:2.5px solid var(--stamp);color:var(--stamp);border-radius:8px;padding:7px 11px;font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-7deg);opacity:.9;text-align:center;line-height:1.25;flex-shrink:0}
+.form-note{font-size:12.5px;color:var(--ink-2);margin:14px 0 0;text-align:center}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 16px;font-size:13.5px;color:var(--ink-2);cursor:pointer}
+.consent input{margin-top:3px;width:17px;height:17px;accent-color:var(--ink);flex-shrink:0}
+.err{color:var(--stamp);font-size:13px;margin:7px 0 0;font-weight:600}
+input.bad-field{border-color:var(--stamp)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.status{margin-top:18px;border-radius:12px;padding:20px;display:none}
+.status.ok{display:block;background:var(--kraft);border:2px solid var(--ink)}
+.status.bad{display:block;background:#FBEDEB;border:2px solid var(--stamp)}
+.status h3{font-size:24px;margin-bottom:8px}
+.status p{margin:0;font-size:15px;color:var(--ink-2)}
+.status.bad h3{color:var(--stamp)}
+.btn[disabled]{opacity:.55;cursor:progress;transform:none;box-shadow:none}
+.spin{width:16px;height:16px;border:2px solid rgba(239,230,214,.35);border-top-color:var(--kraft);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* photo band */
+.band{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0 6px 6px}
+.band figure{margin:0;overflow:hidden;border-radius:10px;background:var(--kraft-deep)}
+.band img{width:100%;height:clamp(130px,17vw,230px);object-fit:cover;transition:transform .5s ease}
+.band figure:hover img{transform:scale(1.05)}
+
+/* trust strip */
+.strip{background:var(--ink);color:var(--kraft);padding:22px 0}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between;align-items:center}
+.strip .item{display:flex;align-items:baseline;gap:10px}
+.strip .num{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:34px;color:var(--zap);line-height:1}
+.strip .lbl{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+
+section{padding:clamp(56px,8vw,100px) 0}
+.sec-head{max-width:46ch;margin-bottom:42px}
+.sec-head h2{font-size:clamp(38px,5.4vw,66px)}
+.sec-head p{margin-top:16px;color:var(--ink-2)}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+
+.card{background:var(--paper);border-radius:var(--radius);padding:28px;border:1px solid var(--kraft-deep);transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(17,28,46,.55)}
+.card h3{font-size:26px;margin-bottom:10px}
+.card p{color:var(--ink-2);font-size:15.5px;margin:0}
+.card .ic{width:44px;height:44px;border-radius:10px;background:var(--kraft);display:grid;place-items:center;margin-bottom:18px}
+.card .ic svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* process */
+.process{background:var(--ink);color:var(--kraft)}
+.process .sec-head p{color:rgba(239,230,214,.72)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(239,230,214,.22)}
+.step{padding:30px 26px 34px 0;border-right:1px solid rgba(239,230,214,.22);position:relative}
+.step:last-child{border-right:0}
+.step:not(:first-child){padding-left:26px}
+.step .n{font-family:"DM Mono",monospace;font-size:12px;color:var(--zap);letter-spacing:.16em;display:block;margin-bottom:16px}
+.step h3{font-size:25px;margin-bottom:10px}
+.step p{color:rgba(239,230,214,.72);font-size:15px;margin:0}
+.step::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--zap)}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.why-photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -30px rgba(17,28,46,.7)}
+.why-photo img{width:100%;height:clamp(300px,42vw,470px);object-fit:cover}
+.why-list{list-style:none;padding:0;margin:26px 0 0}
+.why-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px dashed var(--corrugate)}
+.why-list li:first-child{border-top:1px dashed var(--corrugate)}
+.why-list .k{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--zap);display:grid;place-items:center;margin-top:2px}
+.why-list .k svg{width:14px;height:14px;stroke:var(--ink);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.why-list strong{display:block;font-size:17px}
+.why-list span{color:var(--ink-2);font-size:15px}
+
+/* financing */
+.finance{background:var(--paper);border-top:1px solid var(--kraft-deep);border-bottom:1px solid var(--kraft-deep)}
+.finance .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.pay{display:grid;gap:14px}
+.pay div{border:1.5px solid var(--kraft-deep);border-radius:12px;padding:20px 22px}
+.pay h3{font-size:24px;margin-bottom:6px}
+.pay p{margin:0;font-size:15px;color:var(--ink-2)}
+
+/* reviews */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{background:var(--paper);border:1px solid var(--kraft-deep);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
+.stars{color:var(--zap);letter-spacing:2px;font-size:16px;margin-bottom:14px;-webkit-text-stroke:.6px var(--ink)}
+.quote p{font-size:16px;flex:1}
+.quote .who{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:8px}
+
+/* locations */
+.locs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.loc{background:var(--paper);border:1px solid var(--kraft-deep);border-radius:var(--radius);padding:26px}
+.loc h3{font-size:25px;margin-bottom:8px}
+.loc .tel{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;border-bottom:2px solid var(--zap);padding-bottom:2px;margin-bottom:14px}
+.loc p{font-size:14.5px;color:var(--ink-2);margin:0}
+
+/* faq */
+details{border-bottom:1px solid var(--kraft-deep);padding:4px 0}
+summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;position:relative;font-weight:600;font-size:17.5px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:26px;font-weight:400;color:var(--ink-2)}
+details[open] summary::after{content:"–"}
+details p{color:var(--ink-2);padding-right:40px;margin:0 0 20px}
+
+/* cta */
+.cta-band{background:var(--zap);color:var(--ink);position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(17,28,46,.05) 0 14px,transparent 14px 28px)}
+.cta-band .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.cta-band h2{font-size:clamp(42px,6.2vw,82px)}
+.cta-band p{font-size:18px;max-width:34ch;margin-top:18px}
+.form-card{background:var(--paper);border-radius:var(--radius);padding:28px;box-shadow:0 24px 54px -28px rgba(17,28,46,.6)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* footer */
+footer{background:var(--ink);color:rgba(239,230,214,.78);padding:56px 0 34px;font-size:14.5px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;padding-bottom:32px;border-bottom:1px solid rgba(239,230,214,.2)}
+.foot h4{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--zap);margin:0 0 14px;font-weight:500}
+.foot a{display:block;text-decoration:none;padding:5px 0;color:rgba(239,230,214,.78)}
+.foot a:hover{color:var(--zap)}
+.foot .logo .mark{color:var(--kraft)}
+.social{display:flex;gap:12px;margin-top:16px}
+.social a{padding:0;width:34px;height:34px;border:1px solid rgba(239,230,214,.3);border-radius:50%;display:grid;place-items:center}
+.social svg{width:16px;height:16px;fill:currentColor}
+.legal{padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;opacity:.65}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr}
+  .band{grid-template-columns:repeat(3,1fr)}
+  .band figure:nth-child(n+4){display:none}
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid rgba(239,230,214,.22)}
+  .step:nth-child(2){border-right:0}
+  .g3,.quotes,.locs{grid-template-columns:1fr 1fr}
+  .why,.cta-band .wrap,.finance .wrap{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  nav{position:fixed;top:74px;left:0;right:0;background:var(--kraft);flex-direction:column;align-items:flex-start;gap:0;padding:10px var(--pad) 24px;border-bottom:1px solid var(--kraft-deep);display:none}
+  nav.open{display:flex}
+  nav a.nl{padding:13px 0;width:100%;border-bottom:1px solid var(--kraft-deep)}
+  nav .btn{margin-top:14px;width:100%}
+  .lang{margin-top:14px}
+  .menu-toggle{display:block}
+  .band{grid-template-columns:repeat(2,1fr)}
+  .steps,.g3,.quotes,.locs,.row{grid-template-columns:1fr}
+  .step{padding-left:0!important;padding-right:0;border-right:0}
+  .foot{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <img src="https://framerusercontent.com/images/MZE2KXXEZytwrsd0MQpT7HC8nUM.webp?width=900&height=900" alt="Zapt Movers" onerror="this.style.display='none'">
+      <span class="mark">ZAPT<em>MOVERS</em></span>
+    </a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a class="nl" href="#services" data-en="Services" data-pt="Serviços">Services</a>
+      <a class="nl" href="#process" data-en="How it works" data-pt="Como funciona">How it works</a>
+      <a class="nl" href="#locations" data-en="Locations" data-pt="Locais">Locations</a>
+      <a class="nl" href="/blog/" data-en="Blog" data-pt="Blog">Blog</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-en" aria-pressed="true">EN</button>
+        <button id="btn-pt" aria-pressed="false">PT</button>
+      </div>
+      <a class="btn btn-zap" href="#quote" data-en="Free quote" data-pt="Orçamento grátis">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow mono" data-en="US DOT 3438977 · CAL-T0192235 · $1M cargo coverage" data-pt="US DOT 3438977 · CAL-T0192235 · Cobertura de carga de $1M">US DOT 3438977 · CAL-T0192235 · $1M cargo coverage</div>
+      <h1>
+        <span class="tape" data-en="Booked today." data-pt="Agende hoje.">Booked today.</span>
+        <span class="line2" data-en="Loaded tomorrow." data-pt="Carregamos amanhã.">Loaded tomorrow.</span>
+      </h1>
+      <p class="lede" data-en="Call in the morning, get a binding quote the same day, and we can often have a crew at your door within the week. Fifteen thousand completed moves and 4.8 stars from over 1,000 verified customers say we show up when we said we would. Bay Area, Los Angeles, and Dallas–Fort Worth." data-pt="Ligue de manhã, receba um preço fechado no mesmo dia e, na maioria das vezes, temos uma equipe na sua porta dentro da semana. Quinze mil mudanças concluídas e 4,8 estrelas de mais de 1.000 clientes verificados comprovam que chegamos no horário combinado. Bay Area, Los Angeles e Dallas–Fort Worth.">Call in the morning, get a binding quote the same day, and we can often have a crew at your door within the week. Fifteen thousand completed moves and 4.8 stars from over 1,000 verified customers say we show up when we said we would. Bay Area, Los Angeles, and Dallas–Fort Worth.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#quote" data-en="Book my move" data-pt="Agendar mudança">Book my move</a>
+        <a class="btn btn-ghost" href="tel:+14158432532" data-en="Call (415) 843-2532" data-pt="Ligar (415) 843-2532">Call (415) 843-2532</a>
+      </div>
+      <div class="chips">
+        <span class="chip" data-en="Binding quotes — no hidden fees" data-pt="Orçamento fechado — sem taxas extras">Binding quotes — no hidden fees</span>
+        <span class="chip" data-en="Move now, pay later · 0% interest" data-pt="Mude agora, pague depois · 0% de juros">Move now, pay later · 0% interest</span>
+        <span class="chip" data-en="Open every day, 8am–6pm" data-pt="Aberto todos os dias, 8h–18h">Open every day, 8am–6pm</span>
+        <span class="chip" data-en="Same-week booking available" data-pt="Agenda na mesma semana">Same-week booking available</span>
+      </div>
+    </div>
+
+    <!-- estimator -->
+    <div class="label-card" id="estimator">
+      <div class="label-head">
+        <h3 data-en="60-second estimate" data-pt="Estimativa em 60s">60-second estimate</h3>
+        <span class="mono">FORM&nbsp;ZM-01</span>
+      </div>
+      <div class="perf"></div>
+      <div class="label-body">
+        <div class="field">
+          <label for="size" data-en="What are we moving?" data-pt="O que vamos mudar?">What are we moving?</label>
+          <select id="size">
+            <option value="studio" data-en="Studio / 1 bedroom" data-pt="Studio / 1 quarto">Studio / 1 bedroom</option>
+            <option value="two" selected data-en="2 bedrooms" data-pt="2 quartos">2 bedrooms</option>
+            <option value="three" data-en="3 bedrooms" data-pt="3 quartos">3 bedrooms</option>
+            <option value="four" data-en="4+ bedrooms" data-pt="4+ quartos">4+ bedrooms</option>
+            <option value="office" data-en="Office / commercial" data-pt="Escritório / comercial">Office / commercial</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dist" data-en="How far?" data-pt="Qual a distância?">How far?</label>
+          <select id="dist">
+            <option value="local" selected data-en="Local move (same metro)" data-pt="Mudança local (mesma região)">Local move (same metro)</option>
+            <option value="regional" data-en="30–100 miles" data-pt="30–100 milhas">30–100 miles</option>
+            <option value="long" data-en="Long distance / out of state" data-pt="Longa distância / outro estado">Long distance / out of state</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-en="Add anything?" data-pt="Precisa de algo mais?">Add anything?</label>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" data-add="packing"><span data-en="Full packing" data-pt="Embalagem completa">Full packing</span></label>
+            <label class="opt"><input type="checkbox" data-add="heavy"><span data-en="Piano / safe" data-pt="Piano / cofre">Piano / safe</span></label>
+            <label class="opt"><input type="checkbox" data-add="stairs"><span data-en="Stairs, no elevator" data-pt="Escadas, sem elevador">Stairs, no elevator</span></label>
+            <label class="opt"><input type="checkbox" data-add="storage"><span data-en="Storage" data-pt="Depósito">Storage</span></label>
+          </div>
+        </div>
+        <div class="result">
+          <div>
+            <div class="amount" id="amount">$600 – $1,200</div>
+            <small id="detail" data-en="2 movers · truck · furniture pads and shrink wrap included" data-pt="2 profissionais · caminhão · cobertores e plástico inclusos">2 movers · truck · furniture pads and shrink wrap included</small>
+          </div>
+          <div class="stamp" data-en="Estimate<br>only" data-pt="Apenas<br>estimativa">Estimate<br>only</div>
+        </div>
+        <a class="btn btn-zap" href="#quote" style="width:100%;margin-top:16px" data-en="Get my binding quote" data-pt="Quero meu preço fechado">Get my binding quote</a>
+        <p class="form-note" data-en="Final price confirmed after a free walkthrough. Over 95% of our moves come in at or below the original estimate." data-pt="Preço final confirmado após uma avaliação gratuita. Mais de 95% das nossas mudanças ficam no valor do orçamento ou abaixo dele.">Final price confirmed after a free walkthrough. Over 95% of our moves come in at or below the original estimate.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- real photos -->
+<div class="band">
+  <figure><img src="https://framerusercontent.com/images/i3xFEemaGEYMx8mI8D0Xg7LPNg.webp?width=800&height=600" alt="Zapt Movers yellow truck parked in a residential neighborhood" loading="lazy"></figure>
+  <figure><img src="https://framerusercontent.com/images/KwHuvwZFLjIczca1hneG0Ke898.webp?width=600&height=335" alt="Zapt Movers crew carrying boxes out of a home" loading="lazy"></figure>
+  <figure><img src="https://framerusercontent.com/images/iyNV1Bcyn6val8Zemv8q5RWEU.webp?width=600&height=600" alt="Crew member wrapping furniture before loading" loading="lazy"></figure>
+  <figure><img src="https://framerusercontent.com/images/V7TlaaNJzgD363oCKSNwK77LPI.webp?width=600&height=510" alt="Loading items onto the moving truck" loading="lazy"></figure>
+  <figure><img src="https://framerusercontent.com/images/gVrP2ctzwRnKai9BjfE9B3sZE.webp?width=800&height=397" alt="Zapt Movers fleet of yellow trucks ready for service" loading="lazy"></figure>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><span class="num">15,000+</span><span class="lbl" data-en="Moves completed" data-pt="Mudanças concluídas">Moves completed</span></div>
+    <div class="item"><span class="num">4.8★</span><span class="lbl" data-en="From 1,000+ reviews" data-pt="De 1.000+ avaliações">From 1,000+ reviews</span></div>
+    <div class="item"><span class="num">98%</span><span class="lbl" data-en="Customer satisfaction" data-pt="Satisfação dos clientes">Customer satisfaction</span></div>
+    <div class="item"><span class="num">$1M</span><span class="lbl" data-en="Cargo coverage" data-pt="Cobertura de carga">Cargo coverage</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 data-en="Everything that goes in the truck" data-pt="Tudo o que entra no caminhão">Everything that goes in the truck</h2>
+      <p data-en="One crew, one invoice. Furniture pads, shrink wrap, and mattress covers come free on every residential job." data-pt="Uma equipe, uma fatura. Cobertores, plástico filme e capas de colchão são gratuitos em toda mudança residencial.">One crew, one invoice. Furniture pads, shrink wrap, and mattress covers come free on every residential job.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></div>
+        <h3 data-en="Residential moving" data-pt="Mudança residencial">Residential moving</h3>
+        <p data-en="Studio apartments to large family estates. We wrap and protect furniture, disassemble and reassemble beds and shelving, and load with professional-grade equipment." data-pt="De studios a casas grandes. Protegemos e embalamos os móveis, desmontamos e remontamos camas e estantes, e carregamos com equipamento profissional.">Studio apartments to large family estates. We wrap and protect furniture, disassemble and reassemble beds and shelving, and load with professional-grade equipment.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M8 4v16M3 9h5M3 14h5"/><path d="M12 8h5M12 12h5M12 16h3"/></svg></div>
+        <h3 data-en="Commercial moving" data-pt="Mudança comercial">Commercial moving</h3>
+        <p data-en="Office relocations on evenings and weekends to keep downtime near zero. Cubicles, IT equipment, filing cabinets, and elevator bookings with building management." data-pt="Mudanças de escritório à noite e nos fins de semana para reduzir a parada a quase zero. Baias, equipamentos de TI, arquivos e reserva de elevador com a administração do prédio.">Office relocations on evenings and weekends to keep downtime near zero. Cubicles, IT equipment, filing cabinets, and elevator bookings with building management.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h18v12H3z"/><path d="M3 8l2-4h14l2 4"/><path d="M9 12h6"/></svg></div>
+        <h3 data-en="Packing service" data-pt="Serviço de embalagem">Packing service</h3>
+        <p data-en="Double-walled boxes, acid-free tissue for delicates, custom crating for fragile pieces. Room by room, every box labeled. Full, partial, or fragile-only." data-pt="Caixas de parede dupla, papel neutro para peças delicadas e engradado sob medida para frágeis. Cômodo por cômodo, cada caixa etiquetada. Completa, parcial ou só frágeis.">Double-walled boxes, acid-free tissue for delicates, custom crating for fragile pieces. Room by room, every box labeled. Full, partial, or fragile-only.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 16h11V7H2z"/><path d="M13 10h4l4 4v2h-8z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg></div>
+        <h3 data-en="Long distance" data-pt="Longa distância">Long distance</h3>
+        <p data-en="Real-time GPS tracking, a dedicated move coordinator, and a guaranteed delivery window. DOT-registered fleet built for cross-country hauls." data-pt="Rastreamento GPS em tempo real, um coordenador dedicado e janela de entrega garantida. Frota registrada no DOT, preparada para viagens de costa a costa.">Real-time GPS tracking, a dedicated move coordinator, and a guaranteed delivery window. DOT-registered fleet built for cross-country hauls.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M3 11h18"/><path d="M8 7V4h8v3"/><path d="M11 15h2"/></svg></div>
+        <h3 data-en="Storage solutions" data-pt="Depósito">Storage solutions</h3>
+        <p data-en="Monitored facilities with 24/7 surveillance, unit alarms, and fire suppression. Short and long term. We pick up, store, and deliver on your schedule." data-pt="Instalações monitoradas 24 horas, com alarme por unidade e combate a incêndio. Curto e longo prazo. Buscamos, guardamos e entregamos na sua data.">Monitored facilities with 24/7 surveillance, unit alarms, and fire suppression. Short and long term. We pick up, store, and deliver on your schedule.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3 data-en="Specialty items" data-pt="Itens especiais">Specialty items</h3>
+        <p data-en="Pianos, antiques, artwork, safes, and wine collections. Custom crating, white-glove handling, extra coverage, and documented condition before and after." data-pt="Pianos, antiguidades, obras de arte, cofres e adegas. Engradado sob medida, manuseio white-glove, cobertura adicional e laudo de condição antes e depois.">Pianos, antiques, artwork, safes, and wine collections. Custom crating, white-glove handling, extra coverage, and documented condition before and after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 data-en="Four steps, start to finish" data-pt="Quatro etapas, do início ao fim">Four steps, start to finish</h2>
+      <p data-en="Moving day only feels chaotic when nobody tells you what happens next. Here's the whole thing." data-pt="O dia da mudança só vira bagunça quando ninguém explica o que vem depois. Aqui está tudo.">Moving day only feels chaotic when nobody tells you what happens next. Here's the whole thing.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <span class="n">01</span>
+        <h3 data-en="Get your free quote" data-pt="Peça seu orçamento">Get your free quote</h3>
+        <p data-en="Fill out the form or call us. An accurate, itemized quote in under 60 seconds, with no obligation." data-pt="Preencha o formulário ou ligue. Um orçamento detalhado e preciso em menos de 60 segundos, sem compromisso.">Fill out the form or call us. An accurate, itemized quote in under 60 seconds, with no obligation.</p>
+      </div>
+      <div class="step rv">
+        <span class="n">02</span>
+        <h3 data-en="Schedule your move" data-pt="Escolha a data">Schedule your move</h3>
+        <p data-en="Pick your date and time. We work around your schedule, weekends included, and confirm the arrival window." data-pt="Escolha o dia e o horário. Trabalhamos na sua agenda, inclusive fins de semana, e confirmamos a janela de chegada.">Pick your date and time. We work around your schedule, weekends included, and confirm the arrival window.</p>
+      </div>
+      <div class="step rv">
+        <span class="n">03</span>
+        <h3 data-en="We handle everything" data-pt="Cuidamos de tudo">We handle everything</h3>
+        <p data-en="The crew arrives on time with every piece of equipment. We pack, wrap, load, and transport with expert care." data-pt="A equipe chega no horário com todo o equipamento. Embalamos, protegemos, carregamos e transportamos com cuidado.">The crew arrives on time with every piece of equipment. We pack, wrap, load, and transport with expert care.</p>
+      </div>
+      <div class="step rv">
+        <span class="n">04</span>
+        <h3 data-en="Relax in your new space" data-pt="Relaxe no novo lar">Relax in your new space</h3>
+        <p data-en="We unload and place everything exactly where you want it. Beds rebuilt, boxes in the right rooms, and you're settled." data-pt="Descarregamos e colocamos tudo exatamente onde você quiser. Camas montadas, caixas nos cômodos certos, e pronto.">We unload and place everything exactly where you want it. Beds rebuilt, boxes in the right rooms, and you're settled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section>
+  <div class="wrap why">
+    <div class="why-photo rv">
+      <img src="https://framerusercontent.com/images/bHcmsglNbdoXDU7dVlD5hHD6g7g.webp?width=900&height=1200" alt="Zapt Movers branded truck arriving at a customer home on moving day" loading="lazy">
+    </div>
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2 data-en="Why thousands choose Zapt" data-pt="Por que milhares escolhem a Zapt">Why thousands choose Zapt</h2>
+        <p data-en="Most complaints about movers come down to three things: the price moved, the crew was late, or something broke and nobody owned it. We built the company around fixing those." data-pt="A maioria das reclamações sobre mudanças se resume a três coisas: o preço mudou, a equipe atrasou ou algo quebrou e ninguém assumiu. Montamos a empresa para resolver exatamente isso.">Most complaints about movers come down to three things: the price moved, the crew was late, or something broke and nobody owned it. We built the company around fixing those.</p>
+      </div>
+      <ul class="why-list">
+        <li><span class="k"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><div><strong data-en="Binding, itemized quotes" data-pt="Orçamento fechado e detalhado">Binding, itemized quotes</strong><span data-en="If the job stays in scope, the price stays the same. No fuel, mileage, or equipment fees." data-pt="Se o serviço não mudar, o preço não muda. Sem taxa de combustível, quilometragem ou equipamento.">If the job stays in scope, the price stays the same. No fuel, mileage, or equipment fees.</span></div></li>
+        <li><span class="k"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><div><strong data-en="Licensed, bonded, insured" data-pt="Licenciada, afiançada e segurada">Licensed, bonded, insured</strong><span data-en="US DOT 3438977, CAL-T0192235, up to $1M cargo coverage, plus workers' comp and general liability." data-pt="US DOT 3438977, CAL-T0192235, até $1M de cobertura de carga, além de seguro de acidentes e responsabilidade civil.">US DOT 3438977, CAL-T0192235, up to $1M cargo coverage, plus workers' comp and general liability.</span></div></li>
+        <li><span class="k"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><div><strong data-en="30% faster than average" data-pt="30% mais rápido que a média">30% faster than average</strong><span data-en="Routes coordinated in advance so crews arrive inside your window, ready to work." data-pt="Rotas planejadas com antecedência para a equipe chegar dentro da janela e já começar.">Routes coordinated in advance so crews arrive inside your window, ready to work.</span></div></li>
+        <li><span class="k"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><div><strong data-en="Trained, vetted crews" data-pt="Equipes treinadas e verificadas">Trained, vetted crews</strong><span data-en="Background-checked and drug-tested. Crew leaders average five-plus years on the job." data-pt="Com antecedentes verificados e exame toxicológico. Os líderes têm em média mais de cinco anos de experiência.">Background-checked and drug-tested. Crew leaders average five-plus years on the job.</span></div></li>
+        <li><span class="k"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg></span><div><strong data-en="Claims resolved in days" data-pt="Danos resolvidos em dias">Claims resolved in days</strong><span data-en="Report damage within 72 hours. Most claims are closed in five to ten business days." data-pt="Comunique o dano em até 72 horas. A maioria dos casos é resolvida em cinco a dez dias úteis.">Report damage within 72 hours. Most claims are closed in five to ten business days.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="finance">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2 data-en="Move now, pay later" data-pt="Mude agora, pague depois">Move now, pay later</h2>
+        <p data-en="Money shouldn't decide when you get to move. We partner with Afterpay and Wisetack so you can spread the cost without interest piling up." data-pt="Dinheiro não deveria decidir quando você pode se mudar. Trabalhamos com Afterpay e Wisetack para você dividir o valor sem juros acumulando.">Money shouldn't decide when you get to move. We partner with Afterpay and Wisetack so you can spread the cost without interest piling up.</p>
+      </div>
+    </div>
+    <div class="pay rv">
+      <div>
+        <h3>Afterpay</h3>
+        <p data-en="Split the cost into 4 interest-free payments over 6 weeks. No fees when you pay on time." data-pt="Divida o valor em 4 parcelas sem juros ao longo de 6 semanas. Sem taxas se pagar em dia.">Split the cost into 4 interest-free payments over 6 weeks. No fees when you pay on time.</p>
+      </div>
+      <div>
+        <h3>Wisetack</h3>
+        <p data-en="Monthly payments on jobs from $500 to $25,000. Terms from 3 to 60 months, rates starting at 0% APR. The application takes about a minute and checking your options won't affect your credit score." data-pt="Parcelas mensais em serviços de $500 a $25.000. Prazos de 3 a 60 meses, com taxas a partir de 0% ao ano. A solicitação leva cerca de um minuto e consultar as opções não afeta seu score de crédito.">Monthly payments on jobs from $500 to $25,000. Terms from 3 to 60 months, rates starting at 0% APR. The application takes about a minute and checking your options won't affect your credit score.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 data-en="Trusted by families and businesses" data-pt="Famílias e empresas confiam">Trusted by families and businesses</h2>
+      <p data-en="4.8 out of 5 across more than 1,000 verified reviews on Google and Yelp." data-pt="4,8 de 5 em mais de 1.000 avaliações verificadas no Google e no Yelp.">4.8 out of 5 across more than 1,000 verified reviews on Google and Yelp.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote rv">
+        <div class="stars">★★★★★</div>
+        <p data-en="On time, professional and efficient — finished ahead of the quoted time and cleaned up after themselves." data-pt="Pontuais, profissionais e eficientes — terminaram antes do tempo orçado e ainda limparam tudo.">On time, professional and efficient — finished ahead of the quoted time and cleaned up after themselves.</p>
+        <div class="who">Brittnay Stevens · Google</div>
+      </div>
+      <div class="quote rv">
+        <div class="stars">★★★★★</div>
+        <p data-en="Second time hiring Zapt. Quick response, reasonable rates, and respectful drivers and movers." data-pt="Segunda vez contratando a Zapt. Resposta rápida, preços justos e motoristas e carregadores respeitosos.">Second time hiring Zapt. Quick response, reasonable rates, and respectful drivers and movers.</p>
+        <div class="who">Marvin Nacianceno · Google</div>
+      </div>
+      <div class="quote rv">
+        <div class="stars">★★★★★</div>
+        <p data-en="Moved from San Francisco to Los Angeles. On time, packed with care, courteous, and delivered quickly." data-pt="Mudei de San Francisco para Los Angeles. Pontuais, cuidadosos na embalagem, educados e entregaram rápido.">Moved from San Francisco to Los Angeles. On time, packed with care, courteous, and delivered quickly.</p>
+        <div class="who">Alan K · Yelp · San Francisco, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 data-en="Three hubs, one standard" data-pt="Três bases, um só padrão">Three hubs, one standard</h2>
+      <p data-en="Local crews who know the parking rules, the hill roads, the HOA gates, and the tollways in their own metro." data-pt="Equipes locais que conhecem as regras de estacionamento, as ladeiras, os portões de condomínio e as vias da própria região.">Local crews who know the parking rules, the hill roads, the HOA gates, and the tollways in their own metro.</p>
+    </div>
+    <div class="locs">
+      <div class="loc rv">
+        <h3 data-en="Bay Area" data-pt="Bay Area">Bay Area</h3>
+        <a class="tel" href="tel:+14158432532">(415) 843-2532</a>
+        <p>San Francisco · Oakland · Berkeley · San Jose · Hayward · Fremont · Daly City · Santa Clara · Walnut Creek · Concord · Pleasanton · Livermore · Dublin · San Ramon · Richmond · San Leandro</p>
+      </div>
+      <div class="loc rv">
+        <h3 data-en="Los Angeles &amp; Orange County" data-pt="Los Angeles e Orange County">Los Angeles &amp; Orange County</h3>
+        <a class="tel" href="tel:+14158432532">(415) 843-2532</a>
+        <p>Los Angeles · Long Beach · Pasadena · Santa Monica · Burbank · Glendale · Torrance · Inglewood · Downey · Whittier · Pomona · Anaheim · Irvine · Costa Mesa · Huntington Beach</p>
+      </div>
+      <div class="loc rv">
+        <h3 data-en="Dallas–Fort Worth" data-pt="Dallas–Fort Worth">Dallas–Fort Worth</h3>
+        <a class="tel" href="tel:+14698688785">(469) 868-8785</a>
+        <p>Dallas · Fort Worth · Arlington · Plano · Frisco · McKinney · Irving · Grand Prairie · Garland · Mesquite · Denton · Lewisville · Richardson · Allen · Carrollton · Mansfield</p>
+      </div>
+    </div>
+    <p class="mono rv" style="margin-top:22px;color:var(--ink-2)" data-en="We also handle long-distance moves between Texas and California." data-pt="Também fazemos mudanças de longa distância entre o Texas e a Califórnia.">We also handle long-distance moves between Texas and California.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap" style="max-width:840px">
+    <div class="sec-head rv"><h2 data-en="Straight answers" data-pt="Respostas diretas">Straight answers</h2></div>
+    <div class="rv">
+      <details open>
+        <summary data-en="What does a local move cost?" data-pt="Quanto custa uma mudança local?">What does a local move cost?</summary>
+        <p data-en="It depends on the size of your home, the crew needed, and any specialty items. Most studio and one-bedroom moves start around $350–$600. Two-bedroom homes usually land between $600 and $1,200 depending on furniture volume, stairs, and parking access. Quotes are free and include all standard equipment, furniture pads, and shrink wrap." data-pt="Depende do tamanho da casa, do tamanho da equipe e de itens especiais. A maioria das mudanças de studio ou 1 quarto começa entre $350 e $600. Casas de 2 quartos geralmente ficam entre $600 e $1.200, dependendo do volume de móveis, escadas e acesso para estacionar. O orçamento é gratuito e inclui todo o equipamento padrão, cobertores e plástico filme.">It depends on the size of your home, the crew needed, and any specialty items. Most studio and one-bedroom moves start around $350–$600. Two-bedroom homes usually land between $600 and $1,200 depending on furniture volume, stairs, and parking access. Quotes are free and include all standard equipment, furniture pads, and shrink wrap.</p>
+      </details>
+      <details>
+        <summary data-en="How far ahead should I book?" data-pt="Com quanta antecedência devo agendar?">How far ahead should I book?</summary>
+        <p data-en="Two to four weeks is comfortable, especially from May through September and around the first and last days of the month. We do keep same-week and sometimes same-day availability open when the schedule allows." data-pt="De duas a quatro semanas é confortável, principalmente de maio a setembro e no início e fim de cada mês. Ainda assim, mantemos disponibilidade para a mesma semana e às vezes para o mesmo dia quando a agenda permite.">Two to four weeks is comfortable, especially from May through September and around the first and last days of the month. We do keep same-week and sometimes same-day availability open when the schedule allows.</p>
+      </details>
+      <details>
+        <summary data-en="Are my belongings insured?" data-pt="Meus pertences estão segurados?">Are my belongings insured?</summary>
+        <p data-en="Every move includes basic valuation coverage at no extra charge, and we carry up to $1 million in cargo insurance. For art, antiques, or electronics we offer full-value protection that covers replacement cost, and we document condition before and after." data-pt="Toda mudança inclui a cobertura básica sem custo adicional, e temos até $1 milhão em seguro de carga. Para obras de arte, antiguidades ou eletrônicos oferecemos proteção de valor integral, que cobre o custo de reposição, com laudo de condição antes e depois.">Every move includes basic valuation coverage at no extra charge, and we carry up to $1 million in cargo insurance. For art, antiques, or electronics we offer full-value protection that covers replacement cost, and we document condition before and after.</p>
+      </details>
+      <details>
+        <summary data-en="What can't you move?" data-pt="O que vocês não transportam?">What can't you move?</summary>
+        <p data-en="Hazardous materials are out: propane tanks, gasoline, paint, solvents, ammunition, fireworks, and perishable food. Live plants can't travel on long-distance moves due to agricultural rules. Keep documents, jewelry, and medication in your own car. We go over the full list during the quote." data-pt="Materiais perigosos ficam de fora: botijões de gás, gasolina, tinta, solventes, munição, fogos de artifício e alimentos perecíveis. Plantas vivas não podem ir em viagens longas por causa das regras agrícolas. Documentos, joias e remédios devem ir no seu carro. Revisamos a lista completa durante o orçamento.">Hazardous materials are out: propane tanks, gasoline, paint, solvents, ammunition, fireworks, and perishable food. Live plants can't travel on long-distance moves due to agricultural rules. Keep documents, jewelry, and medication in your own car. We go over the full list during the quote.</p>
+      </details>
+      <details>
+        <summary data-en="How long does a move take?" data-pt="Quanto tempo leva a mudança?">How long does a move take?</summary>
+        <p data-en="A studio or one-bedroom usually runs two to four hours. A two-bedroom averages four to six. Three bedrooms and up can take six to ten hours depending on furniture, specialty items, and the distance between addresses. You get a time estimate with your quote." data-pt="Um studio ou 1 quarto costuma levar de duas a quatro horas. Uma casa de 2 quartos, em média, de quatro a seis. Três quartos ou mais podem levar de seis a dez horas, dependendo dos móveis, dos itens especiais e da distância entre os endereços. Você recebe a estimativa de tempo junto com o orçamento.">A studio or one-bedroom usually runs two to four hours. A two-bedroom averages four to six. Three bedrooms and up can take six to ten hours depending on furniture, specialty items, and the distance between addresses. You get a time estimate with your quote.</p>
+      </details>
+      <details>
+        <summary data-en="What happens if something is damaged?" data-pt="E se algo for danificado?">What happens if something is damaged?</summary>
+        <p data-en="Report it within 72 hours. We review the claim, assess the damage, and resolve it through repair, replacement, or compensation based on your coverage. Most claims close within five to ten business days." data-pt="Comunique em até 72 horas. Analisamos o caso, avaliamos o dano e resolvemos com reparo, substituição ou indenização conforme a sua cobertura. A maioria dos casos é encerrada em cinco a dez dias úteis.">Report it within 72 hours. We review the claim, assess the damage, and resolve it through repair, replacement, or compensation based on your coverage. Most claims close within five to ten business days.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="quote">
+  <div class="wrap">
+    <div class="rv">
+      <h2 data-en="Tell us where and when." data-pt="Diga onde e quando.">Tell us where and when.</h2>
+      <p data-en="Send the details and we'll come back with a free, no-obligation quote — usually within the hour. We're open every day, 8am to 6pm." data-pt="Envie os detalhes e devolvemos um orçamento gratuito e sem compromisso — normalmente em até uma hora. Atendemos todos os dias, das 8h às 18h.">Send the details and we'll come back with a free, no-obligation quote — usually within the hour. We're open every day, 8am to 6pm.</p>
+      <p class="mono" style="margin-top:22px">CA &amp; LA (415) 843-2532 &nbsp;·&nbsp; DFW (469) 868-8785</p>
+    </div>
+    <div class="form-card rv">
+      <div class="row">
+        <div class="field">
+          <label for="fname" data-en="Name" data-pt="Nome">Name</label>
+          <input type="text" id="fname" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="fphone" data-en="Phone" data-pt="Telefone">Phone</label>
+          <input type="tel" id="fphone" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="femail" data-en="Email" data-pt="E-mail">Email</label>
+        <input type="text" id="femail" autocomplete="email" inputmode="email">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="ffrom" data-en="Moving from" data-pt="Sai de">Moving from</label>
+          <input type="text" id="ffrom" placeholder="San Francisco, CA 94110">
+        </div>
+        <div class="field">
+          <label for="fto" data-en="Moving to" data-pt="Vai para">Moving to</label>
+          <input type="text" id="fto" placeholder="Dallas, TX 75208">
+        </div>
+      </div>
+      <div class="field">
+        <label for="fdate" data-en="Preferred date" data-pt="Data desejada">Preferred date</label>
+        <input type="date" id="fdate">
+      </div>
+      <label class="consent" for="foptin">
+        <input type="checkbox" id="foptin" checked>
+        <span data-en="Text me updates about my move. Message rates may apply." data-pt="Quero receber mensagens sobre a minha mudança. Podem incidir tarifas de SMS.">Text me updates about my move. Message rates may apply.</span>
+      </label>
+      <input class="hp" type="text" id="fcompany" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <button class="btn" id="sendBtn">
+          <span id="sendLabel" data-en="Send my request" data-pt="Enviar meu pedido">Send my request</span>
+        </button>
+        <a class="btn btn-ghost" id="waBtn" href="#">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.92C21.95 6.45 17.5 2 12.04 2m5.8 14.13c-.24.68-1.42 1.31-1.96 1.36-.5.05-.97.23-3.27-.68-2.75-1.08-4.5-3.9-4.64-4.08-.13-.18-1.11-1.48-1.11-2.82s.7-2 .95-2.28c.25-.27.54-.34.72-.34s.36 0 .52.01c.17.01.39-.06.61.47.23.54.77 1.88.84 2.02.07.13.11.29.02.47-.09.18-.14.29-.27.45-.14.16-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.13.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.22.61-.13.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.34"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <p class="err" id="formErr" style="display:none"></p>
+      <p class="form-note" data-en="Goes straight into our dispatch system. We reply the same day." data-pt="Vai direto para o nosso sistema de despacho. Respondemos no mesmo dia.">Goes straight into our dispatch system. We reply the same day.</p>
+      <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo">
+          <img src="https://framerusercontent.com/images/MZE2KXXEZytwrsd0MQpT7HC8nUM.webp?width=900&height=900" alt="Zapt Movers" onerror="this.style.display='none'">
+          <span class="mark">ZAPT<em>MOVERS</em></span>
+        </a>
+        <p style="max-width:34ch;margin-top:16px" data-en="Licensed, bonded and insured moving across the Bay Area, Los Angeles and Dallas–Fort Worth. Open every day, 8am–6pm." data-pt="Mudanças licenciadas, afiançadas e seguradas na Bay Area, Los Angeles e Dallas–Fort Worth. Aberto todos os dias, das 8h às 18h.">Licensed, bonded and insured moving across the Bay Area, Los Angeles and Dallas–Fort Worth. Open every day, 8am–6pm.</p>
+        <div class="social">
+          <a href="https://www.facebook.com/zaptmovers.co" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="https://instagram.com/zaptmovers" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.4.5.7.2 1.2.6 1.7 1.1s.9 1 1.1 1.7c.3.6.4 1.3.5 2.4.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.5 2.4-.2.7-.6 1.2-1.1 1.7s-1 .9-1.7 1.1c-.6.3-1.3.4-2.4.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.4-.5-.7-.2-1.2-.6-1.7-1.1s-.9-1-1.1-1.7c-.3-.6-.4-1.3-.5-2.4C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.5-2.4.2-.7.6-1.2 1.1-1.7s1-.9 1.7-1.1c.6-.3 1.3-.4 2.4-.5C8.9 2 9.3 2 12 2m0 5a5 5 0 100 10 5 5 0 000-10m0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4M17.8 6.9a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0"/></svg></a>
+          <a href="https://x.com/zaptmovers1" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.2 2H21l-6.5 7.4L22 22h-6l-4.7-6.2L5.9 22H3l7-8-7.3-12h6.2l4.3 5.7zm-1 18.3h1.6L7.9 3.6H6.2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-en="Services" data-pt="Serviços">Services</h4>
+        <a href="#services" data-en="Residential moving" data-pt="Mudança residencial">Residential moving</a>
+        <a href="#services" data-en="Commercial moving" data-pt="Mudança comercial">Commercial moving</a>
+        <a href="#services" data-en="Packing service" data-pt="Embalagem">Packing service</a>
+        <a href="#services" data-en="Long distance" data-pt="Longa distância">Long distance</a>
+        <a href="#services" data-en="Storage" data-pt="Depósito">Storage</a>
+        <a href="#services" data-en="Specialty items" data-pt="Itens especiais">Specialty items</a>
+      </div>
+      <div>
+        <h4 data-en="Locations" data-pt="Locais">Locations</h4>
+        <a href="#locations" data-en="Bay Area" data-pt="Bay Area">Bay Area</a>
+        <a href="#locations" data-en="San Francisco" data-pt="San Francisco">San Francisco</a>
+        <a href="#locations" data-en="San Jose" data-pt="San Jose">San Jose</a>
+        <a href="#locations" data-en="Los Angeles" data-pt="Los Angeles">Los Angeles</a>
+        <a href="#locations" data-en="Orange County" data-pt="Orange County">Orange County</a>
+        <a href="#locations" data-en="Dallas / Fort Worth" data-pt="Dallas / Fort Worth">Dallas / Fort Worth</a>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-pt="Contato">Contact</h4>
+        <a href="tel:+14158432532">(415) 843-2532</a>
+        <a href="tel:+14698688785">(469) 868-8785 · DFW</a>
+        <a href="#quote" data-en="Request a quote" data-pt="Pedir orçamento">Request a quote</a>
+        <a href="/blog/" data-en="Blog &amp; guides" data-pt="Blog e guias">Blog &amp; guides</a>
+        <p class="mono" style="margin-top:14px;opacity:.75" data-en="Every day · 8am–6pm" data-pt="Todos os dias · 8h–18h">Every day · 8am–6pm</p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Zapt Movers · US DOT 3438977 · Local State License CAL-T0192235</span>
+      <span data-en="Bay Area · Los Angeles · Dallas–Fort Worth" data-pt="Bay Area · Los Angeles · Dallas–Fort Worth">Bay Area · Los Angeles · Dallas–Fort Worth</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   CONFIG — edit here, the whole page follows
+   ========================================================= */
+const CONFIG = {
+  leadEndpoint: "/api/lead",
+  referralSource: "Your Website",
+  email: "info@zaptmovers.com",   // confirm the address that should receive leads
+  whatsapp: "14698688785",        // digits only, country code first
+  base: { studio:[350,600], two:[600,1200], three:[1100,1800], four:[1600,2600], office:[2000,3500] },
+  crew: { studio:"2", two:"2", three:"3", four:"4", office:"4" },
+  distMultiplier: { local:1, regional:1.35, long:2.4 },
+  addOns: { packing:[280,520], heavy:[150,300], stairs:[90,180], storage:[180,320] }
+};
+
+const btnEn = document.getElementById('btn-en');
+const btnPt = document.getElementById('btn-pt');
+function setLang(lang){
+  document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const val = el.getAttribute('data-' + lang);
+    if (val !== null) el.innerHTML = val;
+  });
+  btnEn.setAttribute('aria-pressed', String(lang === 'en'));
+  btnPt.setAttribute('aria-pressed', String(lang === 'pt'));
+  calc();
+}
+btnEn.addEventListener('click', ()=>setLang('en'));
+btnPt.addEventListener('click', ()=>setLang('pt'));
+
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+menuBtn.addEventListener('click', ()=>{
+  const open = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+  nav.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+}));
+
+const sizeEl = document.getElementById('size');
+const distEl = document.getElementById('dist');
+const amountEl = document.getElementById('amount');
+const detailEl = document.getElementById('detail');
+const addEls = Array.from(document.querySelectorAll('[data-add]'));
+
+function calc(){
+  const size = sizeEl.value, dist = distEl.value;
+  const m = CONFIG.distMultiplier[dist];
+  let lo = CONFIG.base[size][0] * m;
+  let hi = CONFIG.base[size][1] * m;
+  const picked = [];
+  addEls.forEach(el=>{
+    if(el.checked){
+      const a = CONFIG.addOns[el.dataset.add];
+      lo += a[0]; hi += a[1];
+      picked.push(el.nextElementSibling.textContent.trim().toLowerCase());
+    }
+  });
+  const round = n => Math.round(n/10)*10;
+  amountEl.textContent = '$' + round(lo).toLocaleString('en-US') + ' – $' + round(hi).toLocaleString('en-US');
+  const pt = document.documentElement.lang.startsWith('pt');
+  const crew = CONFIG.crew[size];
+  let base = pt
+    ? crew + ' profissionais · caminhão · cobertores e plástico inclusos'
+    : crew + ' movers · truck · furniture pads and shrink wrap included';
+  if(picked.length) base += (pt ? ' · com ' : ' · with ') + picked.join(', ');
+  detailEl.textContent = base;
+}
+[sizeEl, distEl].forEach(el=>el.addEventListener('change', calc));
+addEls.forEach(el=>el.addEventListener('change', calc));
+
+function buildMessage(){
+  const pt = document.documentElement.lang.startsWith('pt');
+  const v = id => document.getElementById(id).value.trim();
+  const sizeText = sizeEl.options[sizeEl.selectedIndex].textContent;
+  const distText = distEl.options[distEl.selectedIndex].textContent;
+  const lines = pt ? [
+    'Olá Zapt Movers! Quero um orçamento.','',
+    'Nome: ' + (v('fname') || '—'),
+    'Telefone: ' + (v('fphone') || '—'),
+    'Sai de: ' + (v('ffrom') || '—'),
+    'Vai para: ' + (v('fto') || '—'),
+    'Data: ' + (v('fdate') || '—'),
+    'Tamanho: ' + sizeText + ' · ' + distText,
+    'Estimativa do site: ' + amountEl.textContent
+  ] : [
+    'Hi Zapt Movers, I\u2019d like a quote.','',
+    'Name: ' + (v('fname') || '—'),
+    'Phone: ' + (v('fphone') || '—'),
+    'From: ' + (v('ffrom') || '—'),
+    'To: ' + (v('fto') || '—'),
+    'Date: ' + (v('fdate') || '—'),
+    'Size: ' + sizeText + ' · ' + distText,
+    'Site estimate: ' + amountEl.textContent
+  ];
+  return lines.join('\n');
+}
+
+function parsePlace(raw){
+  const out = {};
+  const s = (raw || '').trim();
+  if(!s) return out;
+  const zip = s.match(/\b(\d{5})(?:-\d{4})?\b/);
+  if(zip) out.zip = zip[1];
+  const parts = s.replace(/\b\d{5}(-\d{4})?\b/, '').split(',').map(x=>x.trim()).filter(Boolean);
+  if(parts.length >= 2){
+    out.city = parts[0];
+    out.state = parts[1].replace(/[^A-Za-z]/g,'').slice(0,2).toUpperCase();
+  } else if(parts.length === 1){
+    out.city = parts[0];
+  }
+  return out;
+}
+
+function splitName(full){
+  const bits = full.trim().split(/\s+/);
+  if(bits.length < 2) return { fullName: full.trim() };
+  return { firstName: bits[0], lastName: bits.slice(1).join(' ') };
+}
+
+function optionLabel(sel){
+  const o = sel.options[sel.selectedIndex];
+  return o.getAttribute('data-en') || o.textContent.trim();
+}
+
+const BEDROOMS = { studio:"1", two:"2", three:"3", four:"4+", office:"Office" };
+
+function buildLead(){
+  const v = id => document.getElementById(id).value.trim();
+  const origin = parsePlace(v('ffrom'));
+  const dest = parsePlace(v('fto'));
+  const size = sizeEl.value;
+  const packing = addEls.some(el => el.checked && el.dataset.add === 'packing');
+
+  const extras = addEls.filter(el=>el.checked)
+    .map(el => el.nextElementSibling.getAttribute('data-en') || el.nextElementSibling.textContent.trim());
+
+  const notes = [
+    'Move size: ' + optionLabel(sizeEl),
+    'Distance: ' + optionLabel(distEl),
+    extras.length ? 'Requested extras: ' + extras.join(', ') : 'Requested extras: none',
+    'Site estimate shown: ' + amountEl.textContent,
+    'Origin as typed: ' + (v('ffrom') || '—'),
+    'Destination as typed: ' + (v('fto') || '—'),
+    'Form language: ' + (document.documentElement.lang.startsWith('pt') ? 'Portuguese' : 'English')
+  ].join(' | ');
+
+  const lead = Object.assign({}, splitName(v('fname')), {
+    phoneNumber: v('fphone'),
+    phoneType: 'Mobile',
+    userOptIn: document.getElementById('foptin').checked,
+    email: v('femail'),
+    bedrooms: BEDROOMS[size],
+    moveSize: optionLabel(sizeEl),
+    serviceType: packing ? 'MovingAndPacking' : 'Moving',
+    referralSource: CONFIG.referralSource,
+    notes: notes
+  });
+
+  const d = v('fdate');
+  if(d) lead.moveDate = d.replace(/-/g, '');
+
+  if(origin.city) lead.originCity = origin.city;
+  if(origin.state) lead.originState = origin.state;
+  if(origin.zip) lead.originZip = origin.zip;
+  if(dest.city) lead.destinationCity = dest.city;
+  if(dest.state) lead.destinationState = dest.state;
+  if(dest.zip) lead.destinationZip = dest.zip;
+
+  const q = new URLSearchParams(window.location.search);
+  const utm = { utm_source:'UtmSource', utm_medium:'UtmMedium', utm_campaign:'UtmCampaign',
+                utm_content:'UtmContent', utm_term:'UtmKeyword' };
+  Object.keys(utm).forEach(k=>{ if(q.get(k)) lead[utm[k]] = q.get(k); });
+
+  return lead;
+}
+
+const sendBtn = document.getElementById('sendBtn');
+const sendLabel = document.getElementById('sendLabel');
+const formErr = document.getElementById('formErr');
+const formStatus = document.getElementById('formStatus');
+
+function showError(msg){
+  formErr.textContent = msg;
+  formErr.style.display = 'block';
+}
+['fname','fphone'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', ()=>{
+    document.getElementById(id).classList.remove('bad-field');
+    formErr.style.display = 'none';
+  });
+});
+
+sendBtn.addEventListener('click', async ()=>{
+  const pt = document.documentElement.lang.startsWith('pt');
+  const name = document.getElementById('fname');
+  const phone = document.getElementById('fphone');
+  formErr.style.display = 'none';
+  name.classList.remove('bad-field');
+  phone.classList.remove('bad-field');
+
+  if(!name.value.trim()){
+    name.classList.add('bad-field');
+    showError(pt ? 'Informe o seu nome.' : 'Enter your name.');
+    name.focus();
+    return;
+  }
+  const digits = phone.value.replace(/\D/g,'');
+  if(digits.length < 10){
+    phone.classList.add('bad-field');
+    showError(pt ? 'Informe um telefone com DDD.' : 'Enter a phone number with area code.');
+    phone.focus();
+    return;
+  }
+  if(document.getElementById('fcompany').value){ return; }
+
+  sendBtn.disabled = true;
+  sendLabel.textContent = pt ? 'Enviando…' : 'Sending…';
+
+  try{
+    const res = await fetch(CONFIG.leadEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(buildLead())
+    });
+
+    if(res.ok){
+      formStatus.className = 'status ok';
+      formStatus.innerHTML = pt
+        ? '<h3>Recebemos o seu pedido.</h3><p>Um coordenador vai ligar hoje mesmo com o preço fechado. Se preferir falar agora: (415) 843-2532.</p>'
+        : '<h3>Got it — you\u2019re in.</h3><p>A coordinator will call you today with your binding price. Want it sooner? Call (415) 843-2532.</p>';
+      sendBtn.style.display = 'none';
+      return;
+    }
+
+    const body = await res.text();
+    if(res.status === 400 && /already been submitted/i.test(body)){
+      formStatus.className = 'status ok';
+      formStatus.innerHTML = pt
+        ? '<h3>Já temos o seu pedido.</h3><p>Este pedido já está no nosso sistema e alguém vai entrar em contato. Precisa falar agora? (415) 843-2532.</p>'
+        : '<h3>We already have this one.</h3><p>Your request is already in our system and someone is on it. Need us sooner? Call (415) 843-2532.</p>';
+      sendBtn.style.display = 'none';
+      return;
+    }
+    throw new Error('HTTP ' + res.status);
+
+  }catch(err){
+    formStatus.className = 'status bad';
+    formStatus.innerHTML = pt
+      ? '<h3>Não conseguimos enviar.</h3><p>Algo falhou no envio. Ligue para (415) 843-2532 ou use o botão do WhatsApp aqui ao lado — seus dados já estão preenchidos na mensagem.</p>'
+      : '<h3>That didn\u2019t go through.</h3><p>Something failed on our end. Call (415) 843-2532 or use the WhatsApp button next to this one — your details are already filled into the message.</p>';
+  }finally{
+    sendBtn.disabled = false;
+    sendLabel.textContent = pt ? 'Enviar meu pedido' : 'Send my request';
+  }
+});
+document.getElementById('waBtn').addEventListener('click', (e)=>{
+  e.preventDefault();
+  window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(buildMessage()), '_blank');
+});
+
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce && 'IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        e.target.style.transitionDelay = Math.min(i*70, 280) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -40px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+} else {
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+}
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>

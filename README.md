@@ -1,0 +1,85 @@
+# Zapt Movers — site
+
+Static site with one serverless function that forwards quote requests to SmartMoving.
+
+```
+index.html                      home page
+blog/index.html                 blog listing
+blog/california-to-texas/       article
+blog/summer-move/               article
+404.html                        not-found page
+netlify/functions/lead.mjs      posts leads to SmartMoving, serves /api/lead
+netlify.toml                    build + security headers
+robots.txt, sitemap.xml         SEO
+```
+
+## Deploy
+
+### Fastest test (no GitHub, ~2 minutes)
+
+1. Go to https://app.netlify.com/drop
+2. Drag this whole folder onto the page.
+3. You get a live URL immediately.
+
+Note: the quote form will fail on a drag-and-drop deploy until you add the
+environment variable below. Everything else works.
+
+### Real setup (GitHub + Netlify)
+
+1. Create a repository at https://github.com/new — name it `zapt-movers-site`.
+   **Make it private.** Public means anyone can read your config.
+
+2. From inside this folder:
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Zapt Movers site"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/zapt-movers-site.git
+   git push -u origin main
+   ```
+
+3. In Netlify: **Add new site → Import an existing project → GitHub**, pick the repo.
+   Leave the build command empty. Publish directory: `.`
+
+4. **Required.** Site configuration → Environment variables → Add:
+
+   ```
+   Key:   SMARTMOVING_PROVIDER_KEY
+   Value: 98f4b618-0190-4506-a109-aba7005c6e31
+   ```
+
+   Then trigger a redeploy. Functions only pick up new variables on a fresh build.
+
+Every `git push` to `main` redeploys automatically. Pull requests get their own
+preview URL, so you can review changes before they go live.
+
+## Testing the form
+
+Submit with a name like `TEST IGNORE` and your own phone number, then check
+SmartMoving for the lead. Confirm origin, destination, move size and the notes
+field all arrived.
+
+If nothing shows up, open Netlify → Logs → Functions. The function logs both the
+payload it sent and whatever SmartMoving replied.
+
+Common results:
+
+- `500 SMARTMOVING_PROVIDER_KEY is not set` — add the variable, then redeploy.
+- `400 This lead has already been submitted` — expected. SmartMoving rejects
+  duplicates. Change the phone number to test again.
+
+## Before pointing the real domain at this
+
+- Replace `(469) 868-8785` if that DFW number from Yelp is wrong.
+- Set `CONFIG.email` in `index.html` to the address that should receive leads.
+- Confirm `CONFIG.whatsapp` in `index.html` is a real WhatsApp number, or remove
+  the WhatsApp button.
+- Check the estimator price ranges in `CONFIG.base` match what your sales team quotes.
+- Fill in `BRANCH_IDS` in `netlify/functions/lead.mjs` so leads route to the
+  right market instead of all landing in the primary branch.
+- Add an email copy of each submission inside the function. SmartMoving
+  recommends this so an outage on their side never costs you a lead.
+- Replace the three placeholder reviews with your real Google and Yelp text.
+- Point `sitemap.xml` and `robots.txt` at the final domain.

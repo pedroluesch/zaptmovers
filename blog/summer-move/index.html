@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving in 100° Heat Without Wrecking Your Stuff | Zapt Movers</title>
+<meta name="description" content="What melts, what warps, and what fogs up when you move in a Texas summer — plus how to keep a crew safe and a truck loaded before the worst of the afternoon heat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111C2E;--ink-2:#3A4A66;--kraft:#EFE6D6;--kraft-deep:#E2D4BC;
+  --corrugate:#C29A63;--zap:#FFD100;--paper:#FFFFFF;--stamp:#B23A2E;
+  --radius:14px;--pad:clamp(20px,5vw,64px);--maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--kraft);color:var(--ink);font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Big Shoulders Display","Arial Narrow",sans-serif;font-weight:900;line-height:.94;letter-spacing:-.01em;text-transform:uppercase;margin:0}
+p{margin:0 0 1.15em}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.mono{font-family:"DM Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.tape{position:relative;display:inline-block}
+.tape::after{content:"";position:absolute;left:-.12em;right:-.12em;bottom:.08em;height:.30em;background:var(--zap);z-index:-1;transform:rotate(-.6deg)}
+.progress{position:fixed;top:0;left:0;height:4px;background:var(--zap);width:0;z-index:80;transition:width .1s linear}
+
+header{position:sticky;top:0;z-index:60;background:rgba(239,230,214,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--kraft-deep)}
+.bar{display:flex;align-items:center;gap:22px;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo img{height:38px;width:auto;border-radius:6px}
+.logo .mark{font-family:"Big Shoulders Display",sans-serif;font-weight:900;font-size:29px;letter-spacing:-.02em;line-height:1}
+.logo .mark em{font-style:normal;background:var(--zap);padding:0 5px;display:inline-block;transform:skewX(-8deg)}
+nav{margin-left:auto;display:flex;align-items:center;gap:24px}
+nav a.nl{text-decoration:none;font-size:14px;font-weight:600;padding:4px 0;border-bottom:2px solid transparent}
+nav a.nl:hover,nav a.nl[aria-current="page"]{border-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--ink);color:var(--kraft);text-decoration:none;padding:13px 22px;border-radius:999px;border:0;cursor:pointer;font-family:"Instrument Sans",sans-serif;font-weight:600;font-size:15px;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 -2px rgba(17,28,46,.25)}
+.btn-zap{background:var(--zap);color:var(--ink)}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;margin-left:auto}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+
+.ahead{padding:clamp(36px,5vw,64px) 0 0}
+.crumb{margin-bottom:20px;color:var(--ink-2)}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--corrugate)}
+.ahead h1{font-size:clamp(40px,6.4vw,86px);max-width:16ch}
+.byline{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:26px;padding-top:20px;border-top:1px dashed var(--corrugate);color:var(--ink-2)}
+.cat{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:var(--zap);color:var(--ink);padding:5px 10px;border-radius:5px}
+.hero-img{margin-top:32px;border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -30px rgba(17,28,46,.6)}
+.hero-img img{width:100%;height:clamp(230px,38vw,420px);object-fit:cover}
+
+article{padding:clamp(40px,5vw,64px) 0 0}
+.col{max-width:70ch;margin:0 auto}
+.col > p:first-of-type{font-size:20px;color:var(--ink-2)}
+.col h2{font-size:clamp(30px,4vw,44px);margin:44px 0 16px}
+.col h3{font-size:23px;margin:30px 0 10px}
+.col ul{padding-left:22px;margin:0 0 1.2em}
+.col li{margin-bottom:9px}
+.col strong{font-weight:600}
+
+.callout{background:var(--paper);border:1px solid var(--kraft-deep);border-radius:var(--radius);padding:26px;margin:32px 0;position:relative;overflow:hidden}
+.callout::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--zap) 0 18px,var(--ink) 18px 26px)}
+.callout h3{margin:6px 0 12px;font-size:23px}
+.callout ul:last-child,.callout p:last-child{margin-bottom:0}
+.pullquote{border-left:4px solid var(--zap);padding:6px 0 6px 22px;margin:32px 0;font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,36px);line-height:1.02;text-transform:uppercase}
+.inline-cta{background:var(--ink);color:var(--kraft);border-radius:var(--radius);padding:30px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.inline-cta h3{font-size:28px;color:var(--kraft);margin:0 0 6px}
+.inline-cta p{margin:0;color:rgba(239,230,214,.75);font-size:15.5px;max-width:40ch}
+
+.next{padding:clamp(56px,8vw,96px) 0}
+.next h2{font-size:clamp(30px,4vw,46px);margin-bottom:24px}
+.nextgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ncard{background:var(--paper);border:1px solid var(--kraft-deep);border-radius:var(--radius);padding:26px;text-decoration:none;transition:transform .22s ease,box-shadow .22s ease}
+.ncard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(17,28,46,.55)}
+.ncard h3{font-size:24px;margin:12px 0 8px}
+.ncard p{color:var(--ink-2);font-size:15px;margin:0}
+
+footer{background:var(--ink);color:rgba(239,230,214,.78);padding:52px 0 32px;font-size:14.5px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(239,230,214,.2)}
+.foot h4{font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--zap);margin:0 0 14px;font-weight:500}
+.foot a{display:block;text-decoration:none;padding:5px 0;color:rgba(239,230,214,.78)}
+.foot a:hover{color:var(--zap)}
+.foot .logo .mark{color:var(--kraft)}
+.legal{padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;opacity:.65}
+
+@media(max-width:720px){
+  nav{position:fixed;top:74px;left:0;right:0;background:var(--kraft);flex-direction:column;align-items:flex-start;gap:0;padding:10px var(--pad) 24px;border-bottom:1px solid var(--kraft-deep);display:none}
+  nav.open{display:flex}
+  nav a.nl{padding:13px 0;width:100%;border-bottom:1px solid var(--kraft-deep)}
+  nav .btn{margin-top:14px;width:100%}
+  .menu-toggle{display:block}
+  .nextgrid,.foot{grid-template-columns:1fr}
+  body{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap bar">
+    <a href="/" class="logo">
+      <img src="https://framerusercontent.com/images/MZE2KXXEZytwrsd0MQpT7HC8nUM.webp?width=900&height=900" alt="Zapt Movers" onerror="this.style.display='none'">
+      <span class="mark">ZAPT<em>MOVERS</em></span>
+    </a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <a class="nl" href="/#services">Services</a>
+      <a class="nl" href="/#process">How it works</a>
+      <a class="nl" href="/#locations">Locations</a>
+      <a class="nl" href="/blog/" aria-current="page">Blog</a>
+      <a class="btn btn-zap" href="/#quote">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="ahead">
+  <div class="wrap">
+    <div class="crumb mono"><a href="/blog/">← Back to all guides</a></div>
+    <h1><span class="tape">Moving in 100° heat</span> without wrecking your stuff</h1>
+    <div class="byline">
+      <span class="cat">Planning</span>
+      <span class="mono">6 min read</span>
+      <span class="mono">By the Zapt Movers crew</span>
+    </div>
+    <div class="hero-img">
+      <img src="https://framerusercontent.com/images/V7TlaaNJzgD363oCKSNwK77LPI.webp?width=1400&height=700" alt="Zapt Movers crew loading items onto the truck">
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="wrap">
+    <div class="col">
+
+      <p>Most moving advice treats weather as a footnote. In Texas, from roughly June through September, it isn't. The inside of a parked box truck on a July afternoon gets far hotter than the air outside, and things that survive a move in April do not always survive a move in August.</p>
+
+      <p>Here's what we've learned watching it happen.</p>
+
+      <h2>What heat actually does to your belongings</h2>
+
+      <ul>
+        <li><strong>Candles, crayons, lipstick, deodorant.</strong> These liquefy. Then they solidify again, inside whatever they leaked into. This is the single most common heat casualty and the easiest to prevent — they ride in your car.</li>
+        <li><strong>Vinyl records.</strong> They warp, and they warp permanently. Stack them vertically, never flat, never near the truck wall, and if the collection matters to you, it goes in the car.</li>
+        <li><strong>Electronics.</strong> The problem usually isn't the heat itself — it's condensation. A device that gets hot and then goes straight into a cold, air-conditioned house can develop moisture inside. Let electronics sit unplugged and acclimate for a few hours before powering them on.</li>
+        <li><strong>Wood furniture and instruments.</strong> Heat plus swings in humidity makes wood expand and contract. Solid wood pieces and anything with a glued joint — a guitar, a piano, an antique table — do not enjoy a full day in a hot trailer.</li>
+        <li><strong>Photos, artwork, and anything on paper.</strong> Photographs stick to each other in heat. Slip acid-free paper between prints, and box them upright.</li>
+        <li><strong>Pressurized and flammable items.</strong> Aerosols, propane, gasoline, lighter fluid. We can't legally carry these anyway, and heat is exactly why.</li>
+      </ul>
+
+      <div class="pullquote">If it would be ruined sitting in a parked car all afternoon, it doesn't belong in the truck.</div>
+
+      <p>That's the whole rule, and it's a surprisingly good filter. Run every fragile or temperature-sensitive item through it.</p>
+
+      <h2>Book the earliest slot you can get</h2>
+
+      <p>The first appointment of the day is the most valuable thing on a summer moving calendar. Starting at 7 or 8am means the heavy loading happens before the worst of the afternoon, which is better for your belongings and considerably better for the people carrying them. Early slots go fast in July. Book weeks ahead, not days.</p>
+
+      <p>If the move is short and local, the ideal is loading in the morning, driving during the hottest part of the day with the truck in motion, and unloading in the late afternoon at the new place — with the air conditioning already on.</p>
+
+      <div class="callout">
+        <h3>Turn on the AC before we arrive</h3>
+        <p>At the destination, get the electricity connected and the air conditioning running the day before, not the morning of. An empty house that's been closed up in a Texas summer can be brutally hot inside, and cooling it down takes hours. Walking a sofa into a 95-degree living room slows everything and puts your things back into the heat they just left.</p>
+      </div>
+
+      <h2>Take care of the crew</h2>
+
+      <p>Our teams bring their own water and take scheduled breaks — that's on us, not on you. But two small things from the customer side make a real difference on a hot day:</p>
+
+      <ul>
+        <li><strong>Leave a bathroom accessible</strong> until the very end at both addresses.</li>
+        <li><strong>Keep a path clear and shaded if possible.</strong> Prop doors, move cars out of the driveway so the truck can park close, and clear the walkway. Every extra step in the sun is an extra step in the sun.</li>
+      </ul>
+
+      <p>Cold water is always appreciated and never expected. Tipping is entirely your call.</p>
+
+      <div class="inline-cta">
+        <div>
+          <h3>Planning a summer move?</h3>
+          <p>Book early and take the first slot of the day. Free quote, same day, no obligation.</p>
+        </div>
+        <a class="btn btn-zap" href="/#quote">Check my date</a>
+      </div>
+
+      <h2>The short version</h2>
+
+      <ul>
+        <li>Book the earliest crew slot available.</li>
+        <li>Anything that melts, warps, or holds memories rides in your car with the AC on.</li>
+        <li>Electricity and AC on at the destination the day before.</li>
+        <li>Let electronics acclimate before you plug them in.</li>
+        <li>Clear the driveway and the path, prop the doors, keep a bathroom open.</li>
+        <li>Don't schedule the last Saturday of the month in July if you have any other option.</li>
+      </ul>
+
+      <p>None of this is complicated. It just has to be decided before the truck shows up, because at 8am on moving day nobody is going to want to have a conversation about candles.</p>
+
+    </div>
+  </div>
+</article>
+
+<section class="next">
+  <div class="wrap">
+    <h2>Keep reading</h2>
+    <div class="nextgrid">
+      <a class="ncard" href="/blog/california-to-texas/">
+        <span class="cat">City guides</span>
+        <h3>California to Dallas–Fort Worth: the honest guide</h3>
+        <p>Real costs, real transit times, and your first 90 days in Texas.</p>
+      </a>
+      <a class="ncard" href="https://www.zaptmovers.com/blog/pack-and-move-services-what%E2%80%99s-included-and-what-costs-more">
+        <span class="cat">Packing</span>
+        <h3>Pack and move services: what's included</h3>
+        <p>Full pack, partial pack, or fragile-only — and which you need.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="/" class="logo">
+          <img src="https://framerusercontent.com/images/MZE2KXXEZytwrsd0MQpT7HC8nUM.webp?width=900&height=900" alt="Zapt Movers" onerror="this.style.display='none'">
+          <span class="mark">ZAPT<em>MOVERS</em></span>
+        </a>
+        <p style="max-width:34ch;margin-top:16px">Licensed, bonded and insured moving across the Bay Area, Los Angeles and Dallas–Fort Worth. Open every day, 8am–6pm.</p>
+      </div>
+      <div>
+        <h4>Read more</h4>
+        <a href="/blog/">All guides</a>
+        <a href="/blog/california-to-texas/">California to DFW</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+14158432532">(415) 843-2532</a>
+        <a href="tel:+14698688785">(469) 868-8785 · DFW</a>
+        <a href="/#quote">Request a quote</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> Zapt Movers · US DOT 3438977 · Local State License CAL-T0192235</span>
+      <span>Bay Area · Los Angeles · Dallas–Fort Worth</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+menuBtn.addEventListener('click', ()=>{
+  const open = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+const bar = document.getElementById('progress');
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+}, {passive:true});
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
