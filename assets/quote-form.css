@@ -1,0 +1,23 @@
+/* Styles for the shared quote form. The home page carries its own copy inline. */
+.zq .field{margin-bottom:16px}
+.zq .field > label{display:block;margin-bottom:7px;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.zq select,.zq input[type=text],.zq input[type=tel],.zq input[type=date]{
+  width:100%;padding:12px 13px;border:1.5px solid var(--kraft-deep);border-radius:10px;
+  font-family:"Instrument Sans",system-ui,sans-serif;font-size:15px;background:#FCFAF6;color:var(--ink);
+}
+.zq select:focus,.zq input:focus{outline:3px solid rgba(255,209,0,.65);outline-offset:1px;border-color:var(--ink)}
+.zq .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.zq .consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 16px;font-size:13.5px;color:var(--ink-2);cursor:pointer}
+.zq .consent input{margin-top:3px;width:17px;height:17px;accent-color:var(--ink);flex-shrink:0}
+.zq .err{color:var(--stamp);font-size:13px;margin:7px 0 0;font-weight:600}
+.zq input.bad-field{border-color:var(--stamp)}
+.zq .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.zq .form-note{font-size:12.5px;color:var(--ink-2);margin:14px 0 0;text-align:center}
+.zq .status{margin-top:18px;border-radius:12px;padding:20px;display:none}
+.zq .status.ok{display:block;background:var(--kraft);border:2px solid var(--ink)}
+.zq .status.bad{display:block;background:#FBEDEB;border:2px solid var(--stamp)}
+.zq .status h3{font-size:24px;margin-bottom:8px}
+.zq .status p{margin:0;font-size:15px;color:var(--ink-2)}
+.zq .status.bad h3{color:var(--stamp)}
+.zq .btn[disabled]{opacity:.55;cursor:progress;transform:none;box-shadow:none}
+@media(max-width:720px){ .zq .row{grid-template-columns:1fr} }

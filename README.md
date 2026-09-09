@@ -116,3 +116,26 @@ Each new city page needs its own version of:
 
 Suggested order: Frisco, Arlington, Fort Worth, Dallas, then San Francisco,
 San Jose, Oakland, Los Angeles, Irvine. Stop at roughly ten.
+
+## Regenerating city pages
+
+City pages are generated, not hand-edited. Editing `movers/<slug>/index.html`
+directly means your change is lost the next time anyone rebuilds.
+
+```bash
+python3 build/build.py
+```
+
+All local content lives in `build/cities.py`. To add a city, copy an existing
+entry and replace **the local content**, not just the name:
+
+- `cards` — four obstacles that are real in that city
+- `hoods` — neighborhoods you actually work
+- `faqs` — questions people there actually ask
+- `title`, `meta`, `lede` — written for that city
+
+If you cannot write four genuinely local obstacles, do not create the page.
+Near-identical city pages are treated as doorway pages by Google and can hurt
+the whole site rather than just failing to rank.
+
+The build also rewrites `sitemap.xml`.
