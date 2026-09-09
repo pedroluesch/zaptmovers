@@ -101,3 +101,18 @@ Check these two URLs in your browser, in this order.
 
 The browser console on the quote page also prints the exact failure, prefixed
 with `Zapt form:`.
+
+## City pages
+
+`movers/plano-tx/` is the template. Before duplicating it for another city,
+replace the local content — not just the city name. Google treats near-identical
+city pages as doorway pages and may rank none of them.
+
+Each new city page needs its own version of:
+- the four "what makes a move here different" cards (real local obstacles)
+- the neighborhood list
+- at least one review from a customer in that city
+- title, meta description, canonical URL and the `areaServed` block in the schema
+
+Suggested order: Frisco, Arlington, Fort Worth, Dallas, then San Francisco,
+San Jose, Oakland, Los Angeles, Irvine. Stop at roughly ten.
