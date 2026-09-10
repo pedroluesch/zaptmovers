@@ -7,7 +7,8 @@ from cities import CITIES
 
 ROOT = pathlib.Path('/home/claude/zapt-site')
 BASE = 'https://www.zaptmovers.com'
-LOGO = 'https://framerusercontent.com/images/MZE2KXXEZytwrsd0MQpT7HC8nUM.webp?width=900&height=900'
+LOGO = '/assets/icon-zapt.svg'
+LOGO_LIGHT = '/assets/icon-zapt-light.svg'
 IMG = 'https://framerusercontent.com/images/%s.webp?width=900&height=700'
 
 BY_SLUG = {c['slug']: c for c in CITIES}
@@ -67,7 +68,7 @@ def footer(nearby_html, city_label):
     <div class="foot">
       <div>
         <a href="/" class="logo">
-          <img src="{LOGO}" alt="Zapt Movers" onerror="this.style.display='none'">
+          <img src="{LOGO_LIGHT}" alt="Zapt Movers" onerror="this.style.display='none'">
           <span class="mark">ZAPT<em>MOVERS</em></span>
         </a>
         <p style="max-width:34ch;margin-top:16px">Licensed, bonded and insured moving across the Bay Area, Los Angeles and Dallas&ndash;Fort Worth. Open every day, 8am&ndash;6pm.</p>
