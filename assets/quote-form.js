@@ -28,8 +28,8 @@
     phoneHref: '+14158432532'
   };
 
-  // Left value is what the visitor sees. data-crm is what SmartMoving stores —
-  // it must match Settings > Sales > Move Sizes exactly or a duplicate is created.
+  // Left value is what the visitor sees. data-beds is the bedroom count Move
+  // Basic stores; data-crm is the readable label it keeps in the notes.
   var SIZES = [
     { v: 'studio', crm: '1 Bedroom',  en: 'Studio / 1 bedroom',   pt: 'Studio / 1 quarto',        beds: '1' },
     { v: 'two',    crm: '2 Bedrooms', en: '2 bedrooms',           pt: '2 quartos',                beds: '2' },
@@ -38,7 +38,7 @@
     { v: 'office', crm: 'Office',     en: 'Office / commercial',  pt: 'Escritório / comercial',   beds: 'Office' }
   ];
 
-  // Must match Settings > Sales > Referral Sources in SmartMoving.
+  // Kept in the lead notes as "Heard about us".
   var REFERRALS = [
     { v: 'Google',          en: 'Google',                      pt: 'Google' },
     { v: 'Yelp',            en: 'Yelp',                        pt: 'Yelp' },
@@ -210,15 +210,17 @@
       lead.userOptIn = el('optin').checked;
       lead.email = val('email');
       lead.bedrooms = opt.getAttribute('data-beds');
-      lead.moveSize = opt.getAttribute('data-crm');
-      lead.serviceType = packing ? 'MovingAndPacking' : 'Moving';
+      lead.serviceType = packing ? 'Moving and packing' : 'Moving';
       lead.referralSource = el('referral').value || CONFIG.defaultReferralSource;
       lead.notes = notes;
+      lead.landingPath = location.pathname;
       if (opts.branch) lead.branch = opts.branch;
 
       var d = val('date');
-      if (d) lead.moveDate = d.replace(/-/g, '');
+      if (d) lead.moveDate = d;   // Move Basic wants 2026-11-15
 
+      if (val('from')) lead.originStreet = val('from');
+      if (val('to')) lead.destinationStreet = val('to');
       if (origin.city) lead.originCity = origin.city;
       if (origin.state) lead.originState = origin.state;
       if (origin.zip) lead.originZip = origin.zip;
@@ -294,8 +296,18 @@
         return res.text().then(function (body) { return { res: res, body: body }; });
       }).then(function (r) {
         if (r.res.ok) {
+          var dup = false;
+          try { dup = JSON.parse(r.body).duplicate === true; } catch (e) {}
+          if (dup) {
+            say('ok',
+              pt ? 'Já temos o seu pedido.' : 'We already have this one.',
+              pt ? 'Este pedido já está no nosso sistema e alguém vai entrar em contato. Precisa falar agora? ' + phone + '.'
+                 : 'Your request is already in our system and someone is on it. Need us sooner? Call ' + phone + '.');
+            sendEl.style.display = 'none';
+            return;
+          }
           say('ok',
-            pt ? 'Recebemos o seu pedido.' : 'Got it — you\u2019re in.',
+            pt ? 'Recebemos o seu pedido.' : 'Got it \u2014 you\u2019re in.',
             pt ? 'Um coordenador vai ligar hoje mesmo com o seu preço. Se preferir falar agora: ' + phone + '.'
                : 'A coordinator will call you today with your price. Want it sooner? Call ' + phone + '.');
           sendEl.style.display = 'none';
@@ -305,19 +317,15 @@
 
         console.error('Zapt form: lead endpoint returned HTTP ' + r.res.status, r.body);
 
-        if (r.res.status === 400 && /already been submitted/i.test(r.body)) {
-          say('ok',
-            pt ? 'Já temos o seu pedido.' : 'We already have this one.',
-            pt ? 'Este pedido já está no nosso sistema e alguém vai entrar em contato. Precisa falar agora? ' + phone + '.'
-               : 'Your request is already in our system and someone is on it. Need us sooner? Call ' + phone + '.');
-          sendEl.style.display = 'none';
-          return;
-        }
         if (r.res.status === 404) {
           console.error('Zapt form: /api/lead not found. The Netlify function did not deploy.');
         }
-        if (r.res.status === 500 && /PROVIDER_KEY/i.test(r.body)) {
-          console.error('Zapt form: SMARTMOVING_PROVIDER_KEY missing. Add it, then trigger a NEW deploy.');
+        if (r.res.status === 500 || /MOVEBASIC_WEBHOOK_URL/i.test(r.body)) {
+          console.error('Zapt form: MOVEBASIC_WEBHOOK_URL is missing or wrong. '
+            + 'Add it in Netlify, then trigger a NEW deploy — functions only read variables at build time.');
+        }
+        if (r.res.status === 422) {
+          console.error('Zapt form: Move Basic needs a name and a phone or an email.');
         }
         throw new Error('HTTP ' + r.res.status);
       }).catch(function (err) {

@@ -1,6 +1,6 @@
 # Zapt Movers — site
 
-Static site with one serverless function that forwards quote requests to SmartMoving.
+Static site with serverless functions that forward quote requests and bookings to Move Basic.
 
 ```
 index.html                      home page
@@ -8,7 +8,8 @@ blog/index.html                 blog listing
 blog/california-to-texas/       article
 blog/summer-move/               article
 404.html                        not-found page
-netlify/functions/lead.mjs      posts leads to SmartMoving, serves /api/lead
+netlify/functions/lead.mjs      posts leads to Move Basic, serves /api/lead
+netlify/lib/movebasic.mjs       the Move Basic mapping, shared by both functions
 netlify.toml                    build + security headers
 robots.txt, sitemap.xml         SEO
 ```
@@ -46,9 +47,12 @@ environment variable below. Everything else works.
 4. **Required.** Site configuration → Environment variables → Add:
 
    ```
-   Key:   SMARTMOVING_PROVIDER_KEY
-   Value: 98f4b618-0190-4506-a109-aba7005c6e31
+   Key:   MOVEBASIC_WEBHOOK_URL
+   Value: https://app.movebasic.us/api/lead-in/<YOUR_KEY>
    ```
+
+   The key sits in the URL path, so the whole URL is a credential and must
+   never be committed. Netlify's secrets scanning would fail the build anyway.
 
    Then trigger a redeploy. Functions only pick up new variables on a fresh build.
 
@@ -57,18 +61,37 @@ preview URL, so you can review changes before they go live.
 
 ## Testing the form
 
-Submit with a name like `TEST IGNORE` and your own phone number, then check
-SmartMoving for the lead. Confirm origin, destination, move size and the notes
-field all arrived.
+Move Basic has a built-in test mode: a lead with `"test": true` is read and
+answered but never saved or charged. Set `MOVEBASIC_TEST_MODE=true` in Netlify
+to put the whole site in that mode, submit the form, and check the function log
+— Move Basic replies with exactly what it read from each field, so you can
+confirm the mapping before a single real lead exists. Remove the variable and
+redeploy when you are done.
 
-If nothing shows up, open Netlify → Logs → Functions. The function logs both the
-payload it sent and whatever SmartMoving replied.
+A `GET` on the webhook URL checks it without sending anything:
+
+```bash
+curl https://app.movebasic.us/api/lead-in/<YOUR_KEY>
+# {"ok": true, "source": "..."}
+```
+
+The `source` it returns is how every lead from this key will be tagged in the
+CRM. Confirm it says what you want your website leads attributed to.
+
+For a real end-to-end check, submit with a name like `TEST IGNORE` and your own
+phone number, then look for it in Move Basic.
 
 Common results:
 
-- `500 SMARTMOVING_PROVIDER_KEY is not set` — add the variable, then redeploy.
-- `400 This lead has already been submitted` — expected. SmartMoving rejects
-  duplicates. Change the phone number to test again.
+- `500` naming `MOVEBASIC_WEBHOOK_URL` — add the variable, then redeploy.
+- `200` with `"duplicate": true` — expected. Same phone or email inside 30 days
+  is noted on the existing lead instead of creating a second one. The form
+  tells the customer we already have their request. Change the phone to test again.
+- `404 Unknown key` — the key was replaced. Ask for the current address.
+- `422` — a name and a phone or an email are required.
+
+Retry only on `5xx`. The function already retries once, a second apart.
+
 
 ## Before pointing the real domain at this
 
@@ -77,10 +100,8 @@ Common results:
 - Confirm `CONFIG.whatsapp` in `index.html` is a real WhatsApp number, or remove
   the WhatsApp button.
 - Check the estimator price ranges in `CONFIG.base` match what your sales team quotes.
-- Fill in `BRANCH_IDS` in `netlify/functions/lead.mjs` so leads route to the
-  right market instead of all landing in the primary branch.
-- Add an email copy of each submission inside the function. SmartMoving
-  recommends this so an outage on their side never costs you a lead.
+- Add an email copy of each quote submission inside `lead.mjs`, so a CRM
+  outage never costs you a lead. `booking.mjs` already has the Resend call to copy.
 - Replace the three placeholder reviews with your real Google and Yelp text.
 - Point `sitemap.xml` and `robots.txt` at the final domain.
 
@@ -95,7 +116,7 @@ Check these two URLs in your browser, in this order.
 
 2. `https://YOUR-SITE.netlify.app/api/lead`
    - `{"error":"Method not allowed"}` → routing is fine. The problem is the
-     environment variable: add `SMARTMOVING_PROVIDER_KEY`, then **redeploy**.
+     environment variable: add `MOVEBASIC_WEBHOOK_URL`, then **redeploy**.
    - Your 404 page → routing problem. The `_redirects` file and the `[[redirects]]`
      block in `netlify.toml` fix this. Redeploy after adding them.
 
@@ -153,7 +174,7 @@ admin/pricing/                  settings editor (noindex)
 assets/pricing.json             every number the calculator uses
 assets/inventory.js             room-by-room catalog with cu ft and lbs
 assets/booking-engine.js        pure calculation, no DOM
-netlify/functions/booking.mjs   emails sales@ and creates a SmartMoving lead
+netlify/functions/booking.mjs   emails sales@ and creates a Move Basic lead
 ```
 
 ### Required environment variables
@@ -164,10 +185,8 @@ BOOKING_FROM_EMAIL     e.g. bookings@zaptmovers.com (must be on the verified dom
 SALES_EMAIL            defaults to sales@zaptmovers.com
 ```
 
-`SMARTMOVING_PROVIDER_KEY` is already set and is reused, so every booking also
-lands in the sales pipeline. Without `RESEND_API_KEY` the booking still reaches
-SmartMoving and the full payload is written to the function log, but no email
-is sent.
+`MOVEBASIC_WEBHOOK_URL` is reused, so every booking also lands in the sales pipeline. Without `RESEND_API_KEY` the booking still reaches
+Move Basic and the full payload is written to the function log, but no email is sent.
 
 ### Google Maps autocomplete
 

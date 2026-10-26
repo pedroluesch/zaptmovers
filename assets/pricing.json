@@ -102,6 +102,6 @@
 
   "notify": {
     "salesEmail": "sales@zaptmovers.com",
-    "alsoCreateSmartMovingLead": true
+    "alsoCreateCrmLead": true
   }
 }

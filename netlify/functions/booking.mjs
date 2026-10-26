@@ -1,17 +1,17 @@
 /*
   Zapt Movers — booking handler.
 
-  Emails the full booking to sales@zaptmovers.com and, optionally, drops a
-  matching lead into SmartMoving so it shows up in the sales pipeline.
+  Emails the full booking to sales@zaptmovers.com and drops a matching lead
+  into Move Basic so it shows up in the sales pipeline.
 
   Environment variables (Netlify > Site configuration > Environment variables):
-    RESEND_API_KEY              required for email
-    SALES_EMAIL                 defaults to sales@zaptmovers.com
-    BOOKING_FROM_EMAIL          a verified sender on your domain
-    SMARTMOVING_PROVIDER_KEY    reuses the lead key you already set
+    RESEND_API_KEY           required for email
+    SALES_EMAIL              defaults to sales@zaptmovers.com
+    BOOKING_FROM_EMAIL       a verified sender on your domain
+    MOVEBASIC_WEBHOOK_URL    the same webhook the quote form uses
 */
 
-const SMARTMOVING_URL = 'https://api.smartmoving.com/api/leads/from-provider/v2';
+import { toMoveBasicLead, sendLeadWithRetry, webhookUrl } from '../lib/movebasic.mjs';
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -172,26 +172,28 @@ export default async (req) => {
   console.log('BOOKING', JSON.stringify(b));
 
   let leadCreated = false;
-  const smKey = process.env.SMARTMOVING_PROVIDER_KEY;
-  if (smKey) {
+  if (webhookUrl()) {
     const q = b.quote || {}, m = b.move || {};
     const bits = (c.name || '').trim().split(/\s+/);
-    const lead = {
+    const lead = toMoveBasicLead({
       firstName: bits[0] || c.name,
-      lastName: bits.slice(1).join(' ') || '-',
+      lastName: bits.slice(1).join(' '),
       phoneNumber: c.phone,
-      phoneType: 'Mobile',
       email: c.email,
       userOptIn: c.smsOptIn === true,
-      referralSource: 'Your Website',
-      serviceType: m.packing && m.packing !== 'none' ? 'MovingAndPacking' : 'Moving',
-      moveDate: (m.date || '').replace(/-/g, ''),
+      referralSource: 'Website booking',
+      serviceType: m.packing && m.packing !== 'none' ? 'Moving and packing' : 'Moving',
+      moveDate: m.date,
+      originStreet: (m.from || {}).text,
       originCity: (m.from || {}).city,
       originState: (m.from || {}).state,
       originZip: (m.from || {}).zip,
+      destinationStreet: (m.to || {}).text,
       destinationCity: (m.to || {}).city,
       destinationState: (m.to || {}).state,
       destinationZip: (m.to || {}).zip,
+      bedrooms: (q.inventory || {}).bedrooms,
+      landingPath: b.source,
       notes: [
         'ONLINE BOOKING REQUEST',
         `Window: ${(m.window || {}).range}`,
@@ -199,21 +201,19 @@ export default async (req) => {
         `Recommended: ${q.movers} movers, ${(q.truck || {}).name}, ${q.billableHours} billable hours`,
         `Estimate shown: ${money(q.low)} - ${money(q.high)}`,
         c.notes ? `Customer notes: ${c.notes}` : null,
-        emailed ? 'Full inventory emailed to sales.' : 'EMAIL FAILED - check function logs for full inventory.'
+        emailed ? 'Full inventory emailed to sales.' : 'EMAIL FAILED - full inventory is in the function log.'
       ].filter(Boolean).join(' | ')
-    };
+    });
 
-    try {
-      const r = await fetch(`${SMARTMOVING_URL}?providerKey=${encodeURIComponent(smKey)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(lead)
-      });
-      leadCreated = r.ok;
-      if (!r.ok) console.error('SmartMoving rejected booking lead', r.status, await r.text());
-    } catch (e) {
-      console.error('Could not reach SmartMoving', e);
+    const r = await sendLeadWithRetry(lead);
+    leadCreated = r.ok;
+    if (r.ok) {
+      console.log('Move Basic booking lead', r.reference, r.duplicate ? '(duplicate)' : '');
+    } else {
+      console.error('Move Basic rejected booking lead', r.status, r.body);
     }
+  } else {
+    console.error('MOVEBASIC_WEBHOOK_URL is not set - booking was not sent to the CRM.');
   }
 
   if (!emailed && !leadCreated) {
