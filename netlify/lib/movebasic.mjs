@@ -125,12 +125,21 @@ export function toMoveBasicLead(src = {}) {
   }
 
   // Move size
-  // Home currently sends moveSize directly.
-  // Other forms may send bedrooms.
+  // Convert the internal values used by the site into the labels
+  // Pedro expects to see inside Move Basic.
+  const MOVE_SIZE_LABELS = {
+    studio: 'Studio / 1 bedroom',
+    two: '2 bedrooms',
+    three: '3 bedrooms',
+    four: '4+ bedrooms',
+    office: 'Office / commercial'
+  };
+
   if (src.moveSize) {
-    lead.moveSize = src.moveSize;
+    lead.moveSize =
+      MOVE_SIZE_LABELS[src.moveSize] || src.moveSize;
   } else if (src.bedrooms) {
-    lead.bedrooms = src.bedrooms;
+    lead.moveSize = src.bedrooms;
   }
 
   // "Your reference" can be used for campaign/source identification.
